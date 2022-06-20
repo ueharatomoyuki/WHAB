@@ -34,3 +34,6 @@ Route::get('/logout', function () {
 Route::post('/relogin',[LoginController::class, 'login'] ); //ログイン認証用
 Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
 
+Route::get('/input',function(){
+    return view('input');
+});

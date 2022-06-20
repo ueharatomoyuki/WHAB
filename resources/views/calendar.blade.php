@@ -89,6 +89,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
   <div class="main">
         <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
         <table class="table table-bordered">
+          
             <tr>
                 <th class="weekend">日</th>
                 <th class="weekday">月</th>
@@ -103,6 +104,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
                     echo $week;
                 }
             ?>
+          </form>
     </table>
 
   </div>
