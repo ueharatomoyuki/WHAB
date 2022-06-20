@@ -61,7 +61,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
       //土曜日を取得
       
       if($day == $day_count){//月の最終日、空セルを追加
-          $week .= str_repeat('<td></td>', 6 - ($youbi % 7));
+          $week .= str_repeat('<td calss="Saturday"></td>', 6 - ($youbi % 7));
       }
       
       $weeks[] = '<tr>' . $week . '</tr>'; //weeks配列にtrと$weekを追加
@@ -87,8 +87,10 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
   <x-header heading="マイページ" name="Axiz花子" />
 
   <div class="main">
+    <center>
         <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
-        <table class="table table-bordered">
+    </center>
+        <table class="calendar" border=1>
             <tr>
                 <th class="weekend">日</th>
                 <th class="weekday">月</th>
@@ -106,6 +108,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
     </table>
 
   </div>
+  
   <footer>
     <small>Copyright &copy; C-Sche, all rights reserved.</small>
   </footer>
