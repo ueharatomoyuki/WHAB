@@ -3,7 +3,7 @@
 header {
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 5px #afeeee;
+  border-bottom: solid 5px #f4fa9a;
   background-color: #ffffff;
   padding: 10px;
 }
