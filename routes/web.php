@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
@@ -24,3 +25,5 @@ Route::get('/', function () {
 Route::get('/index',[LoginController::class, 'index'] ); //初期表示用
 Route::post('/relogin',[LoginController::class, 'login'] ); //ログイン認証用
 Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
+
+Route::post('/calendar',[IndexController::class,'index']);
