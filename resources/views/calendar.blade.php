@@ -86,6 +86,8 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
 <body>
   <x-header heading="マイページ" name="Axiz花子" />
 
+  <a href="/input">収支登録画面へ</a>
+
   <div class="main">
     <center>
         <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
@@ -103,6 +105,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
              <?php
                 foreach ($weeks as $week) {
                     echo $week;
+
                 }
             ?>
     </table>

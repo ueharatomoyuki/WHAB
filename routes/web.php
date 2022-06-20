@@ -5,6 +5,7 @@ use App\Http\Controllers\IndexController;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
+use App\Http\Controllers\InputController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\CalenderControler;
 Route::get('/', function () {
     return view('welcome');
 });
+
 //ログイン　ログアウト//
 Route::get('/index',function(){
     return view('index');
@@ -33,4 +35,11 @@ Route::get('/logout', function () {
 //login 伊良波課題処理
 Route::post('/relogin',[LoginController::class, 'login'] ); //ログイン認証用
 Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
+
+
+Route::get('/input',function(){
+    return view('input');
+});
+//Route::get('/calendar',[InputController::class, 'input']);
+
 
