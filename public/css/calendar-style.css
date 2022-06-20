@@ -32,7 +32,7 @@ table.calendar th.weekday {
   background-color: #98fb98;
 }
 
-table.calendar th.sat {
+table.calendar th.Saturday {
   background-color: #77ffff;
 }
 
@@ -51,7 +51,7 @@ table.calendar td.weekday {
   background-color: #f0fff0;
 }
 
-table.calendar td.sat {
+table.calendar td.Saturday {
   background-color: #aaf0f0;
 }
 

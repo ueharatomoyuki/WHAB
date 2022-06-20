@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <?php
 //タイムゾーンを設定
 date_default_timezone_set('Asia/Tokyo');
@@ -61,7 +63,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
       //土曜日を取得
       
       if($day == $day_count){//月の最終日、空セルを追加
-          $week .= str_repeat('<td></td>', 6 - ($youbi % 7));
+          $week .= str_repeat('<td calss="Saturday"></td>', 6 - ($youbi % 7));
       }
       
       $weeks[] = '<tr>' . $week . '</tr>'; //weeks配列にtrと$weekを追加
@@ -73,6 +75,7 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
 ?>
 
 
+>>>>>>> 35f0a03e177bc2d69f5b4006ebfb729cb2e5633b
 <!DOCTYPE html>
 <html>
 
@@ -87,9 +90,29 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
   <x-header heading="マイページ" name="Axiz花子" />
 
   <div class="main">
+    <center>
+<<<<<<< HEAD
+        <h3><a href="?ym={{$prev}}">&lt;</a>{{$html_title}}<a href="?ym={{$next}}">&gt;</a></h3>
+    </center>    
+        <table class="calendar" border=1>
+          
+            <tr>
+                <th calss="weekend">日</th>
+                <th calss="weekday">月</th>
+                <th calss="weekday">火</th>
+                <th calss="weekday">水</th>
+                <th calss="weekday">木</th>
+                <th calss="weekday">金</th>
+                <th calss="saturday">土</th>
+=======
         <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
+<<<<<<< HEAD
         <table class="table table-bordered">
           
+=======
+    </center>
+        <table class="calendar" border=1>
+>>>>>>> 036cb39b0455f1cee67d5a88850da0f4928bc1ee
             <tr>
                 <th class="weekend">日</th>
                 <th class="weekday">月</th>
@@ -98,16 +121,26 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
                 <th class="weekday">木</th>
                 <th class="weekday">金</th>
                 <th class="Saturday">土</th>
+>>>>>>> 35f0a03e177bc2d69f5b4006ebfb729cb2e5633b
             </tr>
+<<<<<<< HEAD
              <?php
                 foreach ($weeks as $week) {
                     echo $week;
                 }
             ?>
           </form>
+=======
+             
+                @foreach ($weeks as $week)
+                {!!$week!!}
+                @endforeach
+
+>>>>>>> 036cb39b0455f1cee67d5a88850da0f4928bc1ee
     </table>
 
   </div>
+  
   <footer>
     <small>Copyright &copy; C-Sche, all rights reserved.</small>
   </footer>
