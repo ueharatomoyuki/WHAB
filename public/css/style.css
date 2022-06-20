@@ -10,12 +10,18 @@ header {
 
 /* メイン */
 .main {
-  padding: 30px 10px;
+  margin: auto;
+  padding: 30px 100px ;
 }
 
 /* フッター */
 footer {
   height: 30px;
+}
+
+.main-input {
+  margin: auto;
+  padding: 30px 400px ;
 }
 
 small {
@@ -53,7 +59,7 @@ h3 {
   padding: 10px;
   color: #ffffff;
   text-align: center;
-  font-size: 21px;
+  font-size: 15px;
   font-weight: bold;
   background-color: #87cefa;
   border: none;
@@ -90,7 +96,7 @@ h3 {
 
 /* 登録フォーム */
 .input-form{
-  width: 400px;
+  width: 500px;
   border: solid 1px #fa8072;
   border-radius: 20px;
   padding: 30px;
@@ -160,3 +166,7 @@ h3 {
   font-size: 12px;
 }
 
+.div-radio {
+  outline: none;
+}
+.

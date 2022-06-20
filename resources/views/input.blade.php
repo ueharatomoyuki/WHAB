@@ -11,17 +11,20 @@
 <body>
   <x-header heading="スケジュール追加" name="Axiz花子" />
 
-  <div class="main">
-     <a href="calendar" class="btn">マイページへ戻る</a>
+  <div class="main-input">
+    <p> 
+    <a href="calendar" class="btn">マイページへ戻る</a>
+    </P>
 
     <form class="input-form" action="calendar">
       <div class="input-item">
-        <label class="input-title"><center>
-          6/15 ※カレンダーより日付データを得る</center></label>
-       <!-- <input name="date" type="date">-->
+        <label class="input-title">
+          <center>
+           6/15 ※カレンダーより日付データを得る
+          </center>
+        </label>
       </div>
 
-<!--      if(expense ==1 ){} -->
 
       <div><p>支出</p>
         <table>
@@ -100,24 +103,24 @@
             <th>　　金額　　</th>
           </tr>
           <tr> 
-            <td><input type="text" name="income" size=20></td>
-            <td><input type="text" name="income-money" size=20></td>
+            <td><input type="text" name="income" size=30></td>
+            <td><input type="text" name="income-money" size=30></td>
           </tr>
           <tr> 
-            <td><input type="text" name="income" size=20></td>
-            <td><input type="text" name="income-money" size=20></td>
+            <td><input type="text" name="income" size=30></td>
+            <td><input type="text" name="income-money" size=30></td>
           </tr>
           <tr> 
-            <td><input type="text" name="income" size=20></td>
-            <td><input type="text" name="income-money" size=20></td>
+            <td><input type="text" name="income" size=30></td>
+            <td><input type="text" name="income-money" size=30></td>
           </tr>
           <tr> 
-            <td><input type="text" name="income" size=20></td>
-            <td><input type="text" name="income-money" size=20></td>
+            <td><input type="text" name="income" size=30></td>
+            <td><input type="text" name="income-money" size=30></td>
           </tr>
           <tr> 
-            <td>合計</td>
-            <td>sum</td>
+            <td>　　　　　　合計</td>
+            <td>　　　　　　sum</td>
           </tr>
         </table>
       </div>

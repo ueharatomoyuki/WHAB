@@ -86,17 +86,17 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
 <body>
   <x-header heading="マイページ" name="Axiz花子" />
 
-  <div class="container">
+  <div class="main">
         <h3><a href="?ym=<?php echo $prev; ?>">&lt;</a><?php echo $html_title; ?><a href="?ym=<?php echo $next; ?>">&gt;</a></h3>
         <table class="table table-bordered">
             <tr>
-                <th>日</th>
-                <th>月</th>
-                <th>火</th>
-                <th>水</th>
-                <th>木</th>
-                <th>金</th>
-                <th>土</th>
+                <th class="weekend">日</th>
+                <th class="weekday">月</th>
+                <th class="weekday">火</th>
+                <th class="weekday">水</th>
+                <th class="weekday">木</th>
+                <th class="weekday">金</th>
+                <th class="Saturday">土</th>
             </tr>
              <?php
                 foreach ($weeks as $week) {

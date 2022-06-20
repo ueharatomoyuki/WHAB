@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+table.schedule {
+  margin-bottom:10px;
+}
+
+table.schedule, table.schedule th, table.schedule td {
+  border: solid 1px #000000;
+}
+
+table.schedule th.title {
+  background-color: #ffffff;
+}
+
+table.schedule td.time {
+  text-align: center;
+}
+
+table.schedule td {
+  height: 60px;
+}
+
+/* 列ごとのヘッダー背景色設定 */
+table.schedule th.header-time {
+  width:100px;
+  background-color: #ffffff;
+}
+
+table.schedule th.header-important {
+  width:250px;
+  background-color: #ffb6c1;
+}
+
+table.schedule th.header-usual {
+  width:250px;
+  background-color: #98fb98;
+}
+
+table.schedule th.header-else {
+  width:250px;
+  background-color: #dcdcdc;
+}
+
+table.schedule th.header-memo {
+  width:400px;
+  background-color: #afeeee;
+}
+
+/* 列ごとのセル背景色設定 */
+table.schedule td.time {
+  background-color: #ffffff;
+}
+
+table.schedule td.important {
+  background-color: #fff0f5;
+}
+
+table.schedule td.usual {
+  background-color: #f0fff0;
+}
+
+table.schedule td.else {
+  background-color: #f5f5f5;
+}
+
+table.schedule td.memo {
+  background-color: #f0f8ff;
+}
