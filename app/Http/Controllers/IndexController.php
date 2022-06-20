@@ -5,18 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+session_start();
+
 class IndexController extends Controller
 {
     public function index(Request $request){
-        $login = $request->login_id;
+        $name = $request->name;
         $pass = $request->pass;
         // $userLog[] = null;
         $request->validate([
-            'login_id' => 'required',
+            'name' => 'required',
             'pass' => 'required'
         ]);
-        if($login !== null && $pass !==null){
-            $userLog = DB::select("select * from users where login_id = '$login' || password = '$pass'");
+        if($name !== null && $pass !==null){
+            $userLog = DB::select("select * from users where name = '$name' and password = '$pass'");
         }
         if(count($userLog) == 0){
             $_SESSION['userLog'] = count($userLog);

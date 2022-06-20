@@ -21,17 +21,17 @@ $_SESSION['userLog'] = 1;
   </header>
 
   <div class="main">
-    <h2>ログインIDとパスワードを入力してください</h2> 
+    <h2>ネームとパスワードを入力してください</h2> 
 
     <form class="login-form" action="calendar" method="post">
       @csrf
       @if($_SESSION['userLog']==0)
-      <p class="error">IDまたはパスワードが不正です</p>
+      <p class="error">ネームまたはパスワードが不正です</p>
       @endif
       <div>
-        <h3><label>ログインID</label></h3>
-        <input type="text" name="login_id" placeholder="例)1010">
-        @error('login_id')
+        <h3><label>ネーム</label></h3>
+        <input type="text" name="name" placeholder="例)家計簿">
+        @error('name')
         <span class="error">{{$message}}</span>
         @enderror
       </div>
