@@ -44,6 +44,7 @@ $_SESSION['userLog'] = 1;
       </div>
       <button type="submit" class="btn">ログイン</button>
     </form>
+    <a href="insert" class="btn">新規登録</a>
   </div>
 
 <!--  <footer>

@@ -167,7 +167,10 @@ return [
 
     'attributes' => [
         'login_id' => 'ID',
-        'pass'=> 'パスワード'
+        'name' => 'ネーム',
+        'pass'=> 'パスワード',
+        'pass1' => 'パスワード(確認)',
+        'mail' => 'メールアドレス'
     ],
 
 ];

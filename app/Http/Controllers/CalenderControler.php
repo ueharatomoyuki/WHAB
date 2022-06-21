@@ -58,7 +58,6 @@ class CalenderControler extends Controller
         $date = $ym . '-' . $day; //2020-00-00
         
         if($today == $date){
-            
             $week .= '<td class="today">' . $day."<a href=input/$html_title$day class='btn'>";//今日の場合はclassにtodayをつける
         } else {
             $week .= "<td>". $day ."<a href=input/$html_title$day class='btn'>";

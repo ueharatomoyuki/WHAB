@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-
+use App\Http\Controllers\InsertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
@@ -36,9 +36,9 @@ Route::get('/logout', function () {
 Route::post('/relogin',[LoginController::class, 'login'] ); //ログイン認証用
 Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
 
+
 //収支登録　miyagi
 Route::get('/input',function(){
     return view('input');
 });
 Route::get('/input/{html_title}{day}',[InputController::class, 'expense']);
-
