@@ -24,6 +24,7 @@ if(isset($_SESSION['uName'])){
     </h2>
   </header>
 
+  <div class="main-parent">
   <div class="main">
     <h2>ネームとパスワードとメールアドレスを入力してください</h2> 
 
@@ -66,6 +67,7 @@ if(isset($_SESSION['uName'])){
       <button type="submit" class="btn">登録</button>
     </form>
   </div>
+</div>
   <a href="index" class="btn">ログイン画面へ戻る</a>
   <footer>
     <small>Copyright &copy; C-Sche, all rights reserved.</small>

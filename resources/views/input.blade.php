@@ -10,8 +10,8 @@
 <body>
   <x-header heading="家計簿" name="Axiz花子" />
    
-  <div class="input-parent">
-    <div class="main-input">
+  <div class="main-parent">
+    <div class="main">
 
       <p><a href="calendar" class="btn">マイページへ戻る</a></P>
 

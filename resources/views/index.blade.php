@@ -20,7 +20,8 @@ $_SESSION['userLog'] = 1;
     </h2>
   </header>
 
-  <div class="main-index">
+<div class="main-parent">
+  <div class="main">
     <h2>ネームとパスワードを入力してください</h2> 
 
     <form class="login-form" action="calendar" method="post">
@@ -44,8 +45,10 @@ $_SESSION['userLog'] = 1;
       </div>
       <button type="submit" class="btn">ログイン</button>
     </form>
+    <br>
     <a href="insert" class="btn">新規登録</a>
   </div>
+</div>
 
 <!--  <footer>
     <small>Copyright &copy; C-Sche, all rights reserved.</small>
