@@ -9,7 +9,8 @@ class InputController extends Controller
 {   
     function expense($html_title,$day)
     {
-        return view('input')->with('html_title', $html_title)->with('day', $day);
+        $default = DB::select("select * from default_categories ");
+        return view('input')->with('html_title', $html_title)->with('day', $day)->with('default',$default);
     }
 
     public function insert($html_title,$day,Request $request)
