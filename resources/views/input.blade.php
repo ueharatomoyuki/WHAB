@@ -9,8 +9,7 @@
 
 <body>
   <x-header heading="家計簿" name="Axiz花子" />
-
-
+   
   <div class="input-parent">
     <div class="main-input">
 
@@ -46,11 +45,9 @@
                   <tr> 
                     <td>
                       <select class="div-radio">
-                        <label><option name="expense" value="1">食品</option></label>
-                        <label><option name="expense" value="2">日用品</option></label>
-                        <label><option name="expense" value="3">雑貨</option></label>
-                        <label><option name="expense" alue="4">医療費</option></label>
-                        <label><option name="expense"value="5">(追加)</option></label>
+                      @foreach($default as $de)
+                      <label><option name="expense" value="{{$de->id}}">{{$de->category_name}}</option></label>
+                      @endforeach
                       </select>
                     </td>
                     <td><input type="text" name="expenseDetail" size=20></td>
