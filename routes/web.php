@@ -42,3 +42,4 @@ Route::get('/input',function(){
     return view('input');
 });
 Route::get('/input/{html_title}{day}',[InputController::class, 'expense']);
+Route::get('/calendar/{html_title}{day}',[InputController::class, 'insert']);

@@ -15,12 +15,11 @@
 
       <p><a href="calendar" class="btn">マイページへ戻る</a></P>
 
-      <form class="input-form" action="calendar">
-      {{ csrf_field() }}
-
+      <form class="input-form" action="calendar" method="get">
+      @csrf
         <div class="input-item">  
           <label class="input-title">
-            {{$html_title}}{{$day}}日
+            {{ $html_title }}{{ $day }}日
           </label>
         </div>
 
@@ -28,6 +27,7 @@
   
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>
+
           <input id="tab2" type="radio" name="tab_item">
           <label class="tab_item" for="tab2">収入</label>
 
@@ -43,15 +43,15 @@
                   <tr> 
                     <td>
                       <select class="div-radio">
-                        <label><option value="1">食品</option></label>
-                        <label><option value="2">日用品</option></label>
-                        <label><option value="3">雑貨</option></label>
-                        <label><option value="4">医療費</option></label>
-                        <label><option value="5">(追加)</option></label>
+                        <label><option name="expense" value="1">食品</option></label>
+                        <label><option name="expense" value="2">日用品</option></label>
+                        <label><option name="expense" value="3">雑貨</option></label>
+                        <label><option name="expense" alue="4">医療費</option></label>
+                        <label><option name="expense"value="5">(追加)</option></label>
                       </select>
                     </td>
-                    <td><input type="text" name="expense" size=20></td>
-                    <td><input type="text" name="expense-money" size=20></td>
+                    <td><input type="text" name="expenseDetail" size=20></td>
+                    <td><input type="text" name="expenseMoney" size=20></td>
                   </tr>
                   <tr>
                     <td>　</td>
@@ -87,7 +87,7 @@
 
         <div>
           <center><br>
-            <button type="button" onclick="openModal()">登録</button>
+            <button type="submit" onclick="openModal()">登録</button>
             <x-modal mode="登録" />
           </center>
         </div>

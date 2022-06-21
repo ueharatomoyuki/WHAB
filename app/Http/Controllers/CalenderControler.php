@@ -32,7 +32,7 @@ class CalenderControler extends Controller
         $today = date('Y-m-j');
 
         //カレンダーのタイトルを作成　例）2020年10月
-        $html_title = date('Y年n月', $timestamp);//date(表示する内容,基準)
+        $html_title = date('Y-n', $timestamp);//date(表示する内容,基準)
 
         //前月・次月の年月を取得
         //strtotime(,基準)
@@ -60,7 +60,7 @@ class CalenderControler extends Controller
         if($today == $date){
             $week .= '<td class="today">' . $day."<a href=input/$html_title$day class='btn'>";//今日の場合はclassにtodayをつける
         } else {
-            $week .= "<td>". $day ."<a href=input/$html_title$day class='btn'>";
+            $week .= "<td>". $day ."<a href=input/$html_title-$day class='btn'>";
         }
         $week .= '</a> </td>';
         
