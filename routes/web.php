@@ -36,14 +36,9 @@ Route::get('/logout', function () {
 Route::post('/relogin',[LoginController::class, 'login'] ); //ログイン認証用
 Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
 
+
+//収支登録　miyagi
 Route::get('/input',function(){
     return view('input');
 });
-Route::get('/insert',function(){
-    return view('insert');
-});
-Route::post('/insert',[InsertController::class,'insert']);
-Route::get('/endInsert',function(){
-    return view('endInsert');
-});
-//Route::get('/calendar',[InputController::class, 'input']);
+Route::get('/input/{html_title}{day}',[InputController::class, 'expense']);

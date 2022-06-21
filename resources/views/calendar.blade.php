@@ -11,9 +11,10 @@
 <body>
   <x-header heading="マイページ" name="Axiz花子" />
 
-  <a href="/input">収支登録画面へ</a>
+<!--  <a href="/input">収支登録画面へ</a>-->
 
-  <div class="main">
+<div class="main-parent">
+  <div class="main-calendar">
     <h3><a href="?ym={{$prev}}">&lt;</a>{{$html_title}}<a href="?ym={{$next}}">&gt;</a></h3>
     <table class="calendar" border=1>
     <form action="input" method="get" name="list">
@@ -34,10 +35,11 @@
     </table>
 
   </div>
+</div>
 
-  <footer>
+<!--  <footer>
     <small>Copyright &copy; C-Sche, all rights reserved.</small>
-  </footer>
+  </footer>-->
   <script src="js/modal.js"></script>
 </body>
 

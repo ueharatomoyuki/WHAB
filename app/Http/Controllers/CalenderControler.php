@@ -58,12 +58,11 @@ class CalenderControler extends Controller
         $date = $ym . '-' . $day; //2020-00-00
         
         if($today == $date){
-            
-            $week .= '<td class="today">' . $day."<button class='btn' type='submit' value=$day >";//今日の場合はclassにtodayをつける
+            $week .= '<td class="today">' . $day."<a href=input/$html_title$day class='btn'>";//今日の場合はclassにtodayをつける
         } else {
-            $week .= "<td>". $day ."<button class='btn' type='submit' value=$day >";
+            $week .= "<td>". $day ."<a href=input/$html_title$day class='btn'>";
         }
-        $week .= '</button> </td>';
+        $week .= '</a> </td>';
         
         if($youbi % 7 == 6 || $day == $day_count){//週終わり、月終わりの場合
             //%は余りを求める、||はまたは
@@ -81,4 +80,3 @@ class CalenderControler extends Controller
         return view('calendar')->with('weeks', $weeks)->with('prev',$prev)->with('next',$next)->with('html_title',$html_title);
     }
 }
-
