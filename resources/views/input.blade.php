@@ -16,7 +16,7 @@
 
       <p><a href="calendar" class="btn">マイページへ戻る</a></P>
 
-      <form class="input-form" action="calendar" method="get">
+      <form class="input-form" action="{{ route('/insert',['key'=> $html_title]) }}" method="post">
       @csrf
         <div class="input-item">  
           <label class="input-title">
@@ -25,6 +25,8 @@
         </div>
 
         <div class="tab_container">
+
+          <input type="hidden" name="day" value={{ $html_title }}{{ $day }}>
   
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>

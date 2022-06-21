@@ -41,5 +41,7 @@ Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
 Route::get('/input',function(){
     return view('input');
 });
+
 Route::get('/input/{html_title}{day}',[InputController::class, 'expense']);
-Route::get('/calendar/{html_title}{day}',[InputController::class, 'insert']);
+
+Route::post('/insert',[InputController::class, 'insert']);

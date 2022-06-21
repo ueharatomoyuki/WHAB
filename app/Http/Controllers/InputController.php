@@ -12,9 +12,9 @@ class InputController extends Controller
         return view('input')->with('html_title', $html_title)->with('day', $day);
     }
 
-    public function insert($html_title,$day,Request $request)
+    public function insert(Request $request)
     {   
-        $ymd = "$html_title"."$day";   //date日付
+        $ymd =  $request->day;   //date日付
         $category_id = $request->expense;    //カテゴリーid
         $expenseDetail = $request->expenseDetail;  //detail詳細
         $expenseMoney = $request->expenseMoney;   //money金額
@@ -26,7 +26,7 @@ class InputController extends Controller
         //     'mail' => 'required'
         // ]);
 
-        $newUser = DB::table('expenses')->insert([
+        $newdata = DB::table('expenses')->insert([
             ['date' => "$ymd",
              'category_id' => "$category_id",
              'detail' => "$expenseDetail",
