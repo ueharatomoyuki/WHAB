@@ -14,18 +14,19 @@
     <div class="main-input">
 
       <p><a href="calendar" class="btn">マイページへ戻る</a></P>
-
-      <form class="input-form" action="{{ route('/insert',['key'=> $html_title]) }}" method="post">
+ 
+      <form class="input-form" action="/insert" method="post">
       @csrf
         <div class="input-item">  
           <label class="input-title">
-            {{ $html_title }}{{ $day }}日
+            {{ $html_title }}{{ $day }}
           </label>
         </div>
 
         <div class="tab_container">
 
-          <input type="hidden" name="day" value={{ $html_title }}{{ $day }}>
+          <input type="hidden" name="html_title" value="{{ $html_title }}">
+          <input type="hidden" name="day" value="{{ $day }}">
   
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>
@@ -44,9 +45,9 @@
                   </tr>
                   <tr> 
                     <td>
-                      <select class="div-radio">
+                      <select name="expense" class="div-radio">
                       @foreach($default as $de)
-                      <label><option name="expense" value="{{$de->id}}">{{$de->category_name}}</option></label>
+                      <label><option  value="{{$de->id}}" >{{$de->category_name}}</option></label>
                       @endforeach
                       </select>
                     </td>
