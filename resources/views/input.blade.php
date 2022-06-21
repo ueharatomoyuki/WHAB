@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/schedule-style.css">
-  <title>スケジュール追加</title>
+  <title>家計簿</title>
 </head>
 
 <body>
-  <x-header heading="スケジュール追加" name="Axiz花子" />
+  <x-header heading="家計簿" name="Axiz花子" />
 
   <div class="main-input">
     <p> 
