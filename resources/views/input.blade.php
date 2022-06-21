@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/schedule-style.css">
-  <title>収支登録</title>
+  <title>家計簿</title>
 </head>
 
 <body>
-  <x-header heading="収支登録" name="Axiz花子" />
+  <x-header heading="家計簿" name="Axiz花子" />
+
 
   <div class="input-parent">
     <div class="main-input">
