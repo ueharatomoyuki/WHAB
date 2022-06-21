@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-
+use App\Http\Controllers\InsertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
@@ -38,5 +38,12 @@ Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
 
 Route::get('/input',function(){
     return view('input');
+});
+Route::get('/insert',function(){
+    return view('insert');
+});
+Route::post('/insert',[InsertController::class,'insert']);
+Route::get('/endInsert',function(){
+    return view('endInsert');
 });
 //Route::get('/calendar',[InputController::class, 'input']);
