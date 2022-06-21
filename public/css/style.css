@@ -8,21 +8,48 @@ header {
   padding: 10px;
 }
 
-/* メイン */
-.main {
-  margin: auto;
-  padding: 30px 100px ;
+/* メイン(カレンダー) */
+.main-calendar {
+  margin-top: 50px; 
 }
+.main-parent {
+  display: flex;
+  justify-content: center;
+}
+
+/*ログイン画面*/
+.main-index {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  
 
 /* フッター */
 footer {
   height: 30px;
 }
 
+/*収支登録画面*/
 .main-input {
-  margin: auto;
-  padding: 30px 400px ;
+  margin-top: 50px; 
 }
+.input-parent {
+  display: flex;
+  justify-content: center;
+}
+/*
+.main-input {
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}*/
 
 small {
   font-size: 20px;
@@ -97,7 +124,7 @@ h3 {
 /* 登録フォーム */
 .input-form{
   width: 500px;
-  border: solid 1px #fa8072;
+/*  border: solid 1px #fa8072;*/
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 20px;
@@ -169,4 +196,44 @@ h3 {
 .div-radio {
   outline: none;
 }
-.
+
+/*収支登録画面　タブ切り替え*/
+.tab_container {
+  padding-bottom: 1em;
+  background-color: #fff;
+  border:1px solid #37beb0;
+  margin: 0 auto;
+}
+.tab_item {
+  width: calc(100%/4);
+  padding:15px 0;
+  border-bottom: 3px solid #37beb0 ;
+  background-color: #ececec;
+  text-align: center;
+  color: #37beb0 ;
+  display: block;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+input[name="tab_item"] {
+  display: none;
+}
+.tab_content {
+  display: none;
+  padding: 1em 1em 0;
+  clear: both;
+  overflow: hidden;
+}
+#tab1:checked ~ #tab1_content,
+#tab2:checked ~ #tab2_content {
+  display: block;
+}
+.tab_container input:checked + .tab_item {
+  background-color: #37beb0 ;
+  color: #fff;
+}

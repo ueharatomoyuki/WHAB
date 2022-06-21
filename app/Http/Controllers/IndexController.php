@@ -27,7 +27,7 @@ class IndexController extends Controller
             // $_SESSION['userInf'] = $userLog;
             $request->session()->put('userInf',$userLog);
             $request->session()->put('test','test');
-            return view('calendar');
+            return redirect('calendar');
         }
     }
 }

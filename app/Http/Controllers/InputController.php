@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class InputController extends Controller
-{   //カレンダーから登録画面へ
-    function input(){
-        return view('input');
+{   
+    function expense($html_title,$day)
+    {
+
+        return view('input')->with('html_title', $html_title)->with('day', $day);
     }
 
-    //登録画面から登録画面へ
-    function tocalendar(){
-        return view('/calendar');
-    }
+    
+    // function income()
+    // {
+        
+    //     return view('calendar');
+    // }
 }
