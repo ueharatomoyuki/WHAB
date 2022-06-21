@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,8 @@ class InputController extends Controller
 
     public function insert(Request $request)
     {   
-        $ymd =  $request->day;   //date日付
+        $ym =  $request->html_title;
+        $d = $request->day;  //date日付
         $category_id = $request->expense;    //カテゴリーid
         $expenseDetail = $request->expenseDetail;  //detail詳細
         $expenseMoney = $request->expenseMoney;   //money金額
@@ -27,14 +29,16 @@ class InputController extends Controller
         //     'mail' => 'required'
         // ]);
 
+        Log::debug('category_id', [$category_id]);
+
         $newdata = DB::table('expenses')->insert([
-            ['date' => "$ymd",
+            ['date' => "$ym"."-"."$d",
              'category_id' => "$category_id",
              'detail' => "$expenseDetail",
              'money'=> $expenseMoney,
              'user_id'=> $user_id[0]->id
              ]
         ]);
-        return redirect('input');
+         return redirect('calendar');
     }
 }
