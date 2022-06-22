@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <x-header heading="WHAB" name="Axiz花子" />
+  <x-header heading="WHAB" />
    
   <div class="main-parent">
     <div class="main">
 
-      <p><a href="/calendar" class="btn">マイページへ戻る</a></P>
+      <p><a href="/calendar" class="back-btn">マイページへ戻る</a></P>
       @if(!count($exp) == 0)
       <table class="exp" border=1>
         <tr>
@@ -41,8 +41,8 @@
           </label>
         </div>
 
-        <div class="tab_container">
 
+        <div class="tab_container">     
           <input type="hidden" name="date" value="{{ $date }}">
         
           <input id="tab1" type="radio" name="tab_item" checked>
@@ -51,6 +51,7 @@
           <input id="tab2" type="radio" name="tab_item">
           <label class="tab_item" for="tab2">収入</label>
 
+     
           <div class="tab_content" id="tab1_content">
             <div class="tab_content_description">
               <p class="c-txtsp">

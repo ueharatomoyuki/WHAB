@@ -9,10 +9,14 @@
 </head>
 
 <body>
-  <x-header heading="WHAB" name="Axiz花子" />
+  <x-header heading="WHAB" />
 
 <div class="main-parent">
   <div class="main">
+
+  <a href="cumulative" class="back-btn">累計</a>
+  <a href="category" class="back-btn">支出の分類振り分け</a>
+  
 
   <canvas id="myBarChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
@@ -72,9 +76,16 @@
   </div>
 </div>
 
-<!--  <footer>
-    <small>Copyright &copy; C-Sche, all rights reserved.</small>
-  </footer>-->
+<center>
+ <footer>
+  <small>
+  お問い合わせはこちら
+  <!-- <a href=env("hello@exmp.com")>WHAB管理人</a> -->
+  <a href="mailto:' ."hello@exmp.com" .'?subject=このまま送信してください&body='.$bodyBox.'">WHAB管理人</a>
+  </small>
+ </footer>
+</center>
+
   <script src="js/modal.js"></script>
 </body>
 
