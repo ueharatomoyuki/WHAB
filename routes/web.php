@@ -49,6 +49,6 @@ Route::get('/input',function(){
     return view('input');
 });
 
-Route::get('/input/{html_title}{day}',[InputController::class, 'expense']);
+Route::get('/input/{date}',[InputController::class, 'expense']);
 
 Route::post('/insert',[InputController::class, 'insert']);
