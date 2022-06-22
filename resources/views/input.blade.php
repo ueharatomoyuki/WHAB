@@ -29,12 +29,13 @@
     </tr>
     @endforeach
     @endif
-      </table>
+</table>
       <form class="input-form" action="/insert" method="post">
       @csrf
         <div class="input-item">  
           <label class="input-title">
             {{ $date }}
+            
           </label>
         </div>
 

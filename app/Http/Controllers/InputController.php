@@ -33,6 +33,9 @@ class InputController extends Controller
         //     'pass1'=> 'required',
         //     'mail' => 'required'
         // ]);
+        // $request->validate([
+        //     'money' => 'required'
+        // ]);
 
         Log::debug('category_id', [$category_id]);
 

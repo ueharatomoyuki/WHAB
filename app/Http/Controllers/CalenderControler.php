@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CalenderControler extends Controller
 {
@@ -32,7 +34,7 @@ class CalenderControler extends Controller
         $today = date('Y-m-j');
 
         //カレンダーのタイトルを作成　例）2020年10月
-        $html_title = date('Y-n', $timestamp);//date(表示する内容,基準)
+        $html_title = date('Y-m', $timestamp);//date(表示する内容,基準)
 
         //前月・次月の年月を取得
         //strtotime(,基準)
@@ -51,18 +53,39 @@ class CalenderControler extends Controller
 
         //第１週目：空のセルを追加
         //str_repeat(文字列, 反復回数)
+        $user_id = session('userInf');
+        $id = $user_id[0]->id; 
+        // $exs = DB::select("select date,sum(money) from expenses where user_id=$id and date like '$html_title' group by date order by date");
+        // $exs = DB::select("select date,sum(money) from expenses where user_id=$id and DATE_FORMAT(date,'%Y-%M')=$html_title group by date order by date");
+
         $week .= str_repeat('<td></td>', $youbi);
 
         for($day = 1; $day <= $day_count; $day++, $youbi++){
         
-        $date = $ym . '-' . $day; //2020-00-00
+        $date = date('Y-m-d', strtotime($ym . '-' . $day)); //2020-00-00
+
+        $exs = DB::select(
+            DB::raw("select date, sum(money) total from expenses where user_id = :id and (DATE_FORMAT(date, '%Y-%m-%d') = :date) group by date order by date;")
+                            ,array('id'=> $id,'date'=>$date)); 
+        Log::debug('exs', [$exs]);
+        //Log::debug('exs', [gettype($exs)]);
         
         if($today == $date){
             $week .= '<td class="today">' . $day."<a href=input/$html_title-$day class='btn'>";//今日の場合はclassにtodayをつける
+            if(!empty($exs)){
+                   $week .= $exs[0]->total;
+               }$week .= 0;
         } else {
             $week .= "<td>". $day ."<a href=input/$html_title-$day class='btn'>";
+            if(!empty($exs)){
+             Log::debug('sum', [$exs[0]->total]);
+                $week .= $exs[0]->total;
+            }
+            else{
+                $week .= 0;
+            }
         }
-        $week .= '</a> </td>';
+        $week .= '円</a> </td>';
         
         if($youbi % 7 == 6 || $day == $day_count){//週終わり、月終わりの場合
             //%は余りを求める、||はまたは
