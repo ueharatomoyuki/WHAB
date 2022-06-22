@@ -26,6 +26,13 @@ Route::get('/', function () {
 Route::get('/index',function(){
     return view('index');
 });
+Route::get('/insert',function(){
+    return view('insert');
+});
+Route::get('endInsert',function(){
+    return view('endInsert');
+});
+Route::post('/in',[InsertController::class,'insert']);
 Route::post('/calendar',[IndexController::class,'index']);
 Route::get('/logout', function () {
     unset($_SESSION['userInf']);

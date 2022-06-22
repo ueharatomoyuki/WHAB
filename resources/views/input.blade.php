@@ -13,7 +13,7 @@
   <div class="main-parent">
     <div class="main">
 
-      <p><a href="calendar" class="btn">マイページへ戻る</a></P>
+      <p><a href="/calendar" class="btn">マイページへ戻る</a></P>
  
       <form class="input-form" action="/insert" method="post">
       @csrf
