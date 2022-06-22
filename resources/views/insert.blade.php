@@ -24,10 +24,11 @@ if(isset($_SESSION['uName'])){
     </h2>
   </header>
 
+  <div class="main-parent">
   <div class="main">
     <h2>ネームとパスワードとメールアドレスを入力してください</h2> 
 
-    <form class="login-form" action="insert" method="post">
+    <form class="login-form" action="in" method="post">
       @csrf
       @if($_SESSION['noPass']==0)
       <p class="error"> パスワードとパスワード(確認)が違います！</p>
@@ -66,6 +67,7 @@ if(isset($_SESSION['uName'])){
       <button type="submit" class="btn">登録</button>
     </form>
   </div>
+</div>
   <a href="index" class="btn">ログイン画面へ戻る</a>
   <footer>
     <small>Copyright &copy; C-Sche, all rights reserved.</small>

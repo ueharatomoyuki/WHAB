@@ -32,7 +32,6 @@
   var myBarChart = new Chart(ctx, {//オブジェクト生成
     type: 'horizontalBar',//横棒を指定するコード
 
-    //収支差額を分ける事は成功!!
     data: {
       labels: [labelIncome, labelExpense, labelDifference],//配列でグラフの左側に文字を表示させるために必要
       datasets: [
