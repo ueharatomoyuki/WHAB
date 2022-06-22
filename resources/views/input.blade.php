@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/css/style.css">
@@ -8,12 +9,12 @@
 </head>
 
 <body>
-  <x-header heading="家計簿" name="Axiz花子" />
+  <x-header heading="WHAB" />
    
   <div class="main-parent">
     <div class="main">
 
-      <p><a href="/calendar" class="btn">マイページへ戻る</a></P>
+      <p><a href="/calendar" class="back-btn">マイページへ戻る</a></P>
       @if(!count($exp) == 0)
       <table class="exp" border=1>
         <tr>
@@ -30,26 +31,28 @@
     @endforeach
     @endif
 </table>
+
       <form class="input-form" action="/insert" method="post">
-      @csrf
+       @csrf
         <div class="input-item">  
           <label class="input-title">
+
             {{ $date }}
             
           </label>
         </div>
 
-        <div class="tab_container">
 
+        <div class="tab_container">     
           <input type="hidden" name="date" value="{{ $date }}">
         
-  
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>
 
           <input id="tab2" type="radio" name="tab_item">
           <label class="tab_item" for="tab2">収入</label>
 
+     
           <div class="tab_content" id="tab1_content">
             <div class="tab_content_description">
               <p class="c-txtsp">
@@ -71,7 +74,7 @@
                     <td><input type="text" name="expenseMoney" size=20></td>
                   </tr>
                   <tr>
-                    <td>　</td>
+                    <td></td>
                     <td>　　　合計　　　</td>
                     <td>　　sum　　</td>
                   </tr>

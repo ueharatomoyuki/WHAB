@@ -52,3 +52,43 @@ Route::get('/input',function(){
 Route::get('/input/{date}',[InputController::class, 'expense']);
 
 Route::post('/insert',[InputController::class, 'insert']);
+
+
+
+Route::get('/acount',function(){
+    return view('acount'); 
+});
+
+Route::post('/changePassword',function(){
+    return view('changePassword');
+});
+
+Route::post('/changeUserName',function(){
+    return view('changeUserName');
+});
+
+Route::post('/changeMail',function(){
+    return view('changeMail');
+});
+
+Route::get('/admin',function(){
+    return view('admin');
+});
+Route::get('/information',function(){
+    return view('information');
+});
+Route::get('/userlist',function(){
+    return view('userlist');
+});
+
+
+Route::get('/category',function(){
+    return view('category');
+});
+Route::get('/cumulative',function(){
+    return view('cumulative');
+});
+
+Route::get('/getinformation',function(){
+    return view('getinformation');
+});

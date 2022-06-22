@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <x-header heading="WHAB" name="Axiz花子" />
+  <x-header heading="WHAB" />
    
   <div class="main-parent">
   <div class="main">
    
-  <p><a href="calendar" class="btn">マイページへ戻る</a></p>
+  <p><a href="calendar" class="back-btn">マイページへ戻る</a></p>
     
     <div class="input-form">
         <h2>管理者専用ページ</h2>
@@ -39,8 +39,8 @@
       
       <div>
       <h3>ユーザー管理</h3>
-            <a href="userlist" class="btn">ユーザー一覧</a>
-            <a href="information" class="btn">お知らせ</a>
+            <a href="userlist" class="back-btn">ユーザー一覧</a>
+            <a href="information" class="back-btn">お知らせ</a>
       </div>
 
     </div>
