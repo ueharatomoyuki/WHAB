@@ -55,10 +55,6 @@ Route::post('/insert',[InputController::class, 'insert']);
 
 
 
-Route::get('/admin',function(){
-    return view('admin');
-});
-
 Route::get('/acount',function(){
     return view('acount'); 
 });
@@ -73,4 +69,26 @@ Route::post('/changeUserName',function(){
 
 Route::post('/changeMail',function(){
     return view('changeMail');
+});
+
+Route::get('/admin',function(){
+    return view('admin');
+});
+Route::get('/information',function(){
+    return view('information');
+});
+Route::get('/userlist',function(){
+    return view('userlist');
+});
+
+
+Route::get('/category',function(){
+    return view('category');
+});
+Route::get('/cumulative',function(){
+    return view('cumulative');
+});
+
+Route::get('/getinformation',function(){
+    return view('getinformation');
 });
