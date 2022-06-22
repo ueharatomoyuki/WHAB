@@ -26,6 +26,7 @@
 
       <div class="password">
         <form action="changePassword" method="post">
+          @csrf
             <h3><label>　パスワード　</label>
             <input type="password" name="password" size=30>
             </h3>
@@ -35,6 +36,7 @@
 
       <div class="password">
         <form action="changeUserName" method="post">
+        @csrf
             <h3><label>ユーザーネーム</label>
             <input type="text" name="user_name" size=30>
             <button type="submit" class="btn">変更</button>
@@ -44,6 +46,7 @@
             
       <div class="password">
         <form action="changeMail" method="post">
+        @csrf
             <h3><label>メールアドレス</label>
             <input type="text" name="mail" size=30>
             <button type="submit" class="btn">変更</button>
