@@ -10,25 +10,21 @@
 
 <body>
   <x-header heading="WHAB" />
+
   <div class="main-parent">
-  <div class="main">
-    <!-- <h1>収支差額グラフ</h1> -->
-  <div class="chart-container" style="position: relative; height:50vh; width:50vw">
-    <canvas id="myBarChart"></canvas>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-      </div>
-
-  <a href="cumulative" class="back-btn">累計</a>
-  <a href="category" class="back-btn">支出の分類振り分け</a>
+    <div class="main">
   
+    <a href="cumulative" class="back-btn">累計</a>
+    <a href="category" class="back-btn">支出の分類振り分け</a>
+  
+    <!-- <h1>収支差額グラフ</h1> -->
+      <div class="chart-container" style="position: relative; height:50vh; width:50vw">
+        <canvas id="myBarChart"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+        <script>
 
-  <canvas id="myBarChart"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-  <script>
-
-       <!--横棒グラフ(動きあり)-->
-       <script>
-
+    //  横棒グラフ(動きあり)
+      
   var ctx = document.getElementById("myBarChart");
   let income = 300000;//収入の値が入る変数
   let fixedcost = 100000;//固定費の値が入る変数
@@ -38,7 +34,7 @@
   let labelExpense = '支出：' + expense;//配列に入る支出の変数
   let difference = income - expense;//差額=(収入-支出)
   let labelDifference = '差額：' + difference;//配列に入る差額の変数
-  var myBarChart = new Chart(ctx, {//オブジェクト生成
+  var myBarChart = new Chart(ctx, { //オブジェクト生成
     type: 'horizontalBar',//横棒を指定するコード
 
     data: {
