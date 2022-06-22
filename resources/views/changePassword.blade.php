@@ -15,7 +15,7 @@
     <div class="main">
 
       <p>
-        <a href="acount" class="btn">アカウント情報へ戻る</a>
+        <a href="acount" class="back-btn">アカウント情報へ戻る</a>
       </P>
  
         <div class="input-form">

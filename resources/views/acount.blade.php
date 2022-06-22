@@ -9,50 +9,44 @@
 </head>
 
 <body>
-  <x-header heading="WHAB" name="Axiz花子" />
+  <x-header heading="WHAB" />
 
   <div class="main-parent">
     <div class="main">
-    <p><a href="calendar" class="btn">マイページへ戻る</a></P>
+    <p><a href="calendar" class="back-btn">マイページへ戻る</a></P>
  
     <div class="input-form">
     <h2>アカウント情報</h2><br>
 
-      <div>
-        <h3><label>　　　ID　　　</label>
-        <input type="text" size=30 >
-        </h3>
-      </div>
-
-      <div class="password">
-        <form action="changePassword" method="post">
+<table>
+<tr>
+<th>ID</th>
+<th><input type="text" size=30></th>
+<th></th>
+</tr>
+<tr>
+<th>パスワード</th>
+<th><form action="changePassword" method="post">
           @csrf
-            <h3><label>　パスワード　</label>
-            <input type="password" name="password" size=30>
-            </h3>
-            <button type="submit" class="btn">変更</button>
-        </form>
-      </div>
+            <input type="password" name="password" size=30></th>
+        <th><button type="submit" class="btn">変更</button> </form></th>
+</tr>
+<tr>
+<th>ユーザーネーム</th>
+<th><form action="changeUserName" method="post">
+        @csrf
+            <input type="text" name="user_name" size=30></th>
+<th><button type="submit" class="btn">変更</button> </form></th>
+</tr>
+<tr>
+<th>メールアドレス</th>
+<th><form action="changeMail" method="post">
+        @csrf
+            <input type="text" name="mail" size=30></th>
+<th><button type="submit" class="btn">変更</button> </form></th>
+</tr>
 
-      <div class="password">
-        <form action="changeUserName" method="post">
-        @csrf
-            <h3><label>ユーザーネーム</label>
-            <input type="text" name="user_name" size=30>
-            <button type="submit" class="btn">変更</button>
-            </h3>
-        </form>
-      </div>
-            
-      <div class="password">
-        <form action="changeMail" method="post">
-        @csrf
-            <h3><label>メールアドレス</label>
-            <input type="text" name="mail" size=30>
-            <button type="submit" class="btn">変更</button>
-            </h3>
-        </form>
-      </div>
+</table>
       
     </div>
 

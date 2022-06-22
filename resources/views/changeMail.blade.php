@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <x-header heading="WHAB"  />
+  <x-header heading="WHAB" />
    
   <div class="main-parent">
     <div class="main">
 
       <p>
-        <a href="acount" class="btn">アカウント情報へ戻る</a>
+        <a href="acount" class="back-btn">アカウント情報へ戻る</a>
       </P>
  
       <div class="input-form">
@@ -25,7 +25,7 @@
                 <form action="changeMail" method="post">
                     @csrf
                     <h4><label>現在のメールアドレス</label>
-                    <input type="password" name="user_name" size=50 placeholder="aaaa@aaa.co.jp">
+                    <input type="password" name="user_name" size=50 placeholder="aaa@aaa.co.jp">
                     </h4>
                     <br>
                     <h4><label>新しいメールアドレスを入力してください</label><br>

@@ -3,7 +3,7 @@
 header {
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 5px #afeeee;
+  border-bottom: solid 5px #f7f268;
   background-color: #ffffff;
   padding: 10px;
 }
@@ -36,6 +36,7 @@ footer {
 small {
   font-size: 20px;
   color: #a9a9a9;
+
 }
 
 /* 見出し、リンク */
@@ -63,12 +64,12 @@ h3 {
 
 /*header用ボタン*/
 .header-btn{
-  display: inline-block;
+  /*display: inline-block;*/
   width: 150px;
   padding: 30px;
   color: #ffffff;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   background-color: #ffcf8d;
   border: none;
@@ -77,16 +78,48 @@ h3 {
   cursor: pointer; /* カーソルを上にのせた際の表示 */
   outline: none; /* ボタンクリック時の枠線 */
 }
-/*logout*/
+/*logout用*/
 .logout-btn{
   display: inline-block;
   width: 150px;
   padding: 30px;
   color: #ffffff;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
   background-color: #ffc0c0;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  outline: none; /* ボタンクリック時の枠線 */
+}
+/*検索ボタン*/
+.index-btn {
+  display: inline-block;
+  width: 60px;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #3bfbe1;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  outline: none; /* ボタンクリック時の枠線 */ 
+}
+
+.back-btn {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #80e98b;
   border: none;
   border-radius: 10px;
   text-decoration: none;
@@ -97,7 +130,7 @@ h3 {
 /* ボタン */
 .btn {
   display: inline-block;
-  width: 150px;
+  width: 100px;
   padding: 10px;
   color: #ffffff;
   text-align: center;
@@ -112,7 +145,7 @@ h3 {
 }
 
 /* 追加ボタン */
-.add-btn, .input-form button {
+.add-btn  { /*.input-form button*/
   display: inline-block;
   width: 150px;
   padding: 10px;
@@ -213,13 +246,14 @@ h3 {
 }
 
 
-/*tab_change*/
+/*タブ切り替え*/
 
 .tab_container {
   padding-bottom: 1em;
   background-color: #fff;
   border:1px solid #37beb0;
   margin: 0 auto;
+  border-radius: 10px;
 }
 .tab_item {
   width: calc(100%/4);
