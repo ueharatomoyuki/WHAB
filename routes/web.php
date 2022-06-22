@@ -26,6 +26,13 @@ Route::get('/', function () {
 Route::get('/index',function(){
     return view('index');
 });
+Route::get('/insert',function(){
+    return view('insert');
+});
+Route::get('endInsert',function(){
+    return view('endInsert');
+});
+Route::post('/in',[InsertController::class,'insert']);
 Route::post('/calendar',[IndexController::class,'index']);
 Route::get('/logout', function () {
     unset($_SESSION['userInf']);
@@ -42,6 +49,28 @@ Route::get('/input',function(){
     return view('input');
 });
 
-Route::get('/input/{html_title}{day}',[InputController::class, 'expense']);
+Route::get('/input/{date}',[InputController::class, 'expense']);
 
 Route::post('/insert',[InputController::class, 'insert']);
+
+
+
+Route::get('/admin',function(){
+    return view('admin');
+});
+
+Route::get('/acount',function(){
+    return view('acount'); 
+});
+
+Route::post('/changePassword',function(){
+    return view('changePassword');
+});
+
+Route::post('/changeUserName',function(){
+    return view('changeUserName');
+});
+
+Route::post('/changeMail',function(){
+    return view('changeMail');
+});

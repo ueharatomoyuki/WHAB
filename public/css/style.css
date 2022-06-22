@@ -3,11 +3,16 @@
 header {
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 5px #f4fa9a;
+  border-bottom: solid 5px #afeeee;
   background-color: #ffffff;
   padding: 10px;
 }
 
+/* メイン 
+.main-calendar {
+  margin: auto;
+  padding: 30px 100px ;
+}*/
 /* 画面の基本配置 */
 .main {
   margin-top: 50px; 
@@ -17,43 +22,20 @@ header {
   justify-content: center;
 }
 
-/*ログイン画面
-.main-index {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-  }*/
-  
 
 /* フッター */
 footer {
   height: 30px;
 }
 
-/*収支登録画面*/
 .main-input {
-  margin-top: 50px; 
+  margin: auto;
+  padding: 30px 400px ;
 }
-.input-parent {
-  display: flex;
-  justify-content: center;
-}
-/*
-.main-input {
-    margin: 0;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}*/
 
 small {
   font-size: 20px;
-  color: #a9a9a9
+  color: #a9a9a9;
 }
 
 /* 見出し、リンク */
@@ -68,8 +50,8 @@ h3 {
 /* ログインフォーム */
 .login-form {
   background-color: #f0f8ff;
-  width: 300px;
-  border: solid 1px #94fdad;
+  width: 500px;
+  border: solid 1px #87cefa;
   border-radius: 20px;
   padding: 30px;
   box-shadow: 3px 3px 3px #c0c0c0;
@@ -77,6 +59,39 @@ h3 {
 
 .login-form input {
   height: 20px;
+}
+
+/*header用ボタン*/
+.header-btn{
+  display: inline-block;
+  width: 150px;
+  padding: 30px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #ffcf8d;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  outline: none; /* ボタンクリック時の枠線 */
+}
+/*logout*/
+.logout-btn{
+  display: inline-block;
+  width: 150px;
+  padding: 30px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #ffc0c0;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  outline: none; /* ボタンクリック時の枠線 */
 }
 
 /* ボタン */
@@ -88,7 +103,7 @@ h3 {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  background-color: #81fa83;
+  background-color: #87cefa;
   border: none;
   border-radius: 10px;
   text-decoration: none;
@@ -124,7 +139,7 @@ h3 {
 /* 登録フォーム */
 .input-form{
   width: 500px;
-/*  border: solid 1px #fa8072;*/
+  border: solid 1px #fa8072;
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 20px;
@@ -197,7 +212,9 @@ h3 {
   outline: none;
 }
 
-/*収支登録画面　タブ切り替え*/
+
+/*tab_change*/
+
 .tab_container {
   padding-bottom: 1em;
   background-color: #fff;

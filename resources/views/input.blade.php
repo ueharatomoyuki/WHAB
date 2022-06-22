@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/schedule-style.css">
-  <title>家計簿</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/schedule-style.css">
+  <title>収支登録</title>
 </head>
 
 <body>
-  <x-header heading="家計簿" name="Axiz花子" />
+  <x-header heading="WHAB" name="Axiz花子" />
    
   <div class="main-parent">
     <div class="main">
 
-      <p><a href="calendar" class="btn">マイページへ戻る</a></P>
+      <p>
+        <a href="/calendar" class="btn">マイページへ戻る</a>
+      </P>
  
       <form class="input-form" action="/insert" method="post">
-      @csrf
+       @csrf
         <div class="input-item">  
           <label class="input-title">
-            {{ $html_title }}{{ $day }}
+            <center>
+            <p>{{ $html_title }}{{ $day }}</p>
+            </center> 
           </label>
         </div>
 
-        <div class="tab_container">
-
           <input type="hidden" name="html_title" value="{{ $html_title }}">
           <input type="hidden" name="day" value="{{ $day }}">
-  
+
+
+        <div class="tab_container">
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>
 
@@ -55,7 +60,7 @@
                     <td><input type="text" name="expenseMoney" size=20></td>
                   </tr>
                   <tr>
-                    <td>　</td>
+                    <td></td>
                     <td>　　　合計　　　</td>
                     <td>　　sum　　</td>
                   </tr>

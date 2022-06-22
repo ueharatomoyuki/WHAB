@@ -8,16 +8,21 @@ use Illuminate\Support\Facades\DB;
 
 class InputController extends Controller
 {   
-    function expense($html_title,$day)
+    
+    function expense($date)
     {
+        $user_id = session('userInf');
+        $id = $user_id[0]->id; 
         $default = DB::select("select * from default_categories ");
-        return view('input')->with('html_title', $html_title)->with('day', $day)->with('default',$default);
+        $exp = DB::select("select c.category_name, e.detail, e.money from expenses e inner join default_categories c on e.category_id = c.id where e.user_id = $id and date = '$date'");
+        return view('input')->with('date', $date)->with('default',$default)->with('exp',$exp);
     }
 
     public function insert(Request $request)
     {   
-        $ym =  $request->html_title;
-        $d = $request->day;  //date日付
+        // $ym =  $request->html_title;
+        // $d = $request->day;  //date日付
+        $date = $request->date;  //date日付
         $category_id = $request->expense;    //カテゴリーid
         $expenseDetail = $request->expenseDetail;  //detail詳細
         $expenseMoney = $request->expenseMoney;   //money金額
@@ -32,7 +37,9 @@ class InputController extends Controller
         Log::debug('category_id', [$category_id]);
 
         $newdata = DB::table('expenses')->insert([
-            ['date' => "$ym"."-"."$d",
+            [
+                // 'date' => "$ym"."-"."$d",
+                'date' => $date,
              'category_id' => "$category_id",
              'detail' => "$expenseDetail",
              'money'=> $expenseMoney,
