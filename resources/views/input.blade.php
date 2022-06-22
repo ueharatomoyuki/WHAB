@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/schedule-style.css">
-  <title>収支登録</title>
+  <title>家計簿</title>
 </head>
 
 <body>
@@ -14,25 +14,37 @@
   <div class="main-parent">
     <div class="main">
 
-      <p>
-        <a href="/calendar" class="btn">マイページへ戻る</a>
-      </P>
- 
+      <p><a href="/calendar" class="btn">マイページへ戻る</a></P>
+      @if(!count($exp) == 0)
+      <table class="exp" border=1>
+        <tr>
+          <th class="category">費目</th>
+          <th class='deital'>詳細</th>
+          <th class="money">金額</th>
+        </tr>
+    @foreach($exp as $ex)
+    <tr>
+      @foreach($ex as $e)
+         <td> {{$e}}</td>
+      @endforeach
+    </tr>
+    @endforeach
+    @endif
+      </table>
+      
       <form class="input-form" action="/insert" method="post">
        @csrf
         <div class="input-item">  
           <label class="input-title">
-            <center>
-            <p>{{ $html_title }}{{ $day }}</p>
-            </center> 
+
+            {{ $date }}
           </label>
         </div>
 
-          <input type="hidden" name="html_title" value="{{ $html_title }}">
-          <input type="hidden" name="day" value="{{ $day }}">
-
-
         <div class="tab_container">
+
+          <input type="hidden" name="date" value="{{ $date }}">
+        
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>
 
