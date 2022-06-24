@@ -5,6 +5,7 @@ table.calendar {
   margin-bottom: 30px;
   font-size: 20px;
   text-align: center;
+  /* vertical-align: bottom; */
 }
 
 table.calendar, table.calendar th, table.calendar td {

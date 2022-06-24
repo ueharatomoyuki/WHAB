@@ -9,6 +9,7 @@ use App\Http\Controllers\InputController;
 use App\Http\Controllers\expDispController;
 use App\Http\Controllers\CategoryController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 class CalenderControler extends Controller
 {
     public function turn() 
-    {
+    { 
                 //タイムゾーンを設定
         date_default_timezone_set('Asia/Tokyo');
 
@@ -79,23 +78,24 @@ class CalenderControler extends Controller
         $fixedcost = DB::select(" SELECT sum(money) FROM expenses WHERE user_id = $id and date LIKE '$html_title-%' ");
         //Log::debug('fixedcost', [$fixedcost]);
 
-        
+                
         if($today == $date){
-            $week .= '<td class="today">' . $day."<a href=input/$html_title-$day class='btn'>";//今日の場合はclassにtodayをつける
+            $week .= '<td class="today">' . $day."<a class='btn' onclick='sample(\"$date\")'>";//今日の場合はclassにtodayをつける
             if(!empty($exs)){
                    $week .= $exs[0]->total;
                }$week .= 0;
         } else {
-            $week .= "<td>". $day ."<a href=input/$html_title-$day class='btn'>";
+            $week .= "<td>". $day ."<a class='btn' onclick='sample(\"$date\")'>";
             if(!empty($exs)){
-             //Log::debug('sum', [$exs[0]->total]);
+             Log::debug('sum', [$exs[0]->total]);
                 $week .= $exs[0]->total;
             }
             else{
                 $week .= 0;
             }
         }
-        $week .= '円</a> </td>';
+
+        $week .= '円</a></td>';
         
         if($youbi % 7 == 6 || $day == $day_count){//週終わり、月終わりの場合
             //%は余りを求める、||はまたは

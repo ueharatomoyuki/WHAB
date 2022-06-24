@@ -32,7 +32,7 @@
     @endforeach
     @endif
 </table>
-      
+
         <div class="input-item">  
           <label class="input-title">
 
@@ -119,10 +119,11 @@
           </div>
           
         </div>
+
     </div>
   </div>
 
-  <script src="js/modal.js"></script>
+  <script src="/js/modal.js"></script>
 
 </body>
 </html>
