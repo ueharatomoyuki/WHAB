@@ -7,6 +7,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\expDispController;
+use App\Http\Controllers\updateController;
+use App\Http\Controllers\endUpdateController;
+use App\Http\Controllers\AcountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +60,8 @@ Route::post('/insert',[InputController::class, 'insert']);
 
 
 Route::get('/acount',function(){
-    return view('acount'); 
+    $user_id = session('userInf');
+    return view('acount')->with('user',$user_id);
 });
 
 Route::post('/changePassword',function(){
@@ -93,5 +97,10 @@ Route::get('/cumulative',function(){
 Route::get('/getinformation',function(){
     return view('getinformation');
 });
-
+//非同期通信
 Route::get('/expnses/{date}', [expDispController::class,'disp']);
+Route::get('/update/{id}',[updateController::class,'update']);
+//
+
+//更新
+Route::post('/endUpdate',[endUpdateController::class,'update']);
