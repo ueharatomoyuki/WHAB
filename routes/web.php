@@ -7,9 +7,13 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\expDispController;
+
 use App\Http\Controllers\updateController;
 use App\Http\Controllers\endUpdateController;
 use App\Http\Controllers\AcountController;
+
+use App\Http\Controllers\CategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +52,7 @@ Route::post('/relogin',[LoginController::class, 'login'] ); //ログイン認証
 Route::get('/calendar',[CalenderControler::class, 'turn'] ); //再出力
 
 
-//収支登録　miyagi
+//収支登録
 Route::get('/input',function(){
     return view('input');
 });
@@ -57,8 +61,10 @@ Route::get('/input/{date}',[InputController::class, 'expense']);
 
 Route::post('/insert',[InputController::class, 'insert']);
 
+Route::post('/incomeInsert',[InputController::class, 'incomeInsert']);
 
 
+/* アカウント情報関連 */
 Route::get('/acount',function(){
     $user_id = session('userInf');
     return view('acount')->with('user',$user_id);
@@ -76,6 +82,7 @@ Route::post('/changeMail',function(){
     return view('changeMail');
 });
 
+/* 管理者専用ページ関連 */
 Route::get('/admin',function(){
     return view('admin');
 });
@@ -87,13 +94,21 @@ Route::get('/userlist',function(){
 });
 
 
+/* 支出分類振り分け関連 */
 Route::get('/category',function(){
     return view('category');
 });
+Route::get('/category',[CategoryController::class, 'categories']);
+
+
+/* 累計 */
 Route::get('/cumulative',function(){
     return view('cumulative');
 });
 
+
+
+/* お知らせ閲覧 */
 Route::get('/getinformation',function(){
     return view('getinformation');
 });

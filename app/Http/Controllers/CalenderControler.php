@@ -63,12 +63,22 @@ class CalenderControler extends Controller
         
         $date = date('Y-m-d', strtotime($ym . '-' . $day)); //2020-00-00
 
+        //カレンダー日毎支出表示
         $exs = DB::select(
             DB::raw("select date, sum(money) total from expenses where user_id = :id and (DATE_FORMAT(date, '%Y-%m-%d') = :date) group by date order by date;")
                             ,array('id'=> $id,'date'=>$date)); 
-        Log::debug('exs', [$exs]);
+        //Log::debug('exs', [$exs]);
         //Log::debug('exs', [gettype($exs)]);
-        
+
+        //収入表示
+        $income = DB::select(" SELECT sum(money) FROM incomes WHERE user_id = $id and date LIKE '$html_title-%' ");
+        //Log::debug('income', [$income]);
+
+        //月の支出表示　今後、状況をみて固定費と変動費それぞれの合計をマイページ上のグラフに表示予定
+        $fixedcost = DB::select(" SELECT sum(money) FROM expenses WHERE user_id = $id and date LIKE '$html_title-%' ");
+        //Log::debug('fixedcost', [$fixedcost]);
+
+                
         if($today == $date){
             $week .= '<td class="today">' . $day."<a class='btn' onclick='sample(\"$date\")'>";//今日の場合はclassにtodayをつける
             if(!empty($exs)){
@@ -84,6 +94,7 @@ class CalenderControler extends Controller
                 $week .= 0;
             }
         }
+
         $week .= '円</a></td>';
         
         if($youbi % 7 == 6 || $day == $day_count){//週終わり、月終わりの場合
@@ -99,6 +110,11 @@ class CalenderControler extends Controller
             $week = '';//weekをリセット
         }
         }
-        return view('calendar')->with('weeks', $weeks)->with('prev',$prev)->with('next',$next)->with('html_title',$html_title);
+        return view('calendar')->with('weeks', $weeks)
+                               ->with('prev',$prev)
+                               ->with('next',$next)
+                               ->with('html_title',$html_title)
+                               ->with('income' ,$income)
+                               ->with('fixedcost' ,$fixedcost);
     }
 }
