@@ -18,35 +18,34 @@
     <div class="input-form">
     <h2>アカウント情報</h2><br>
 
-<table>
-<tr>
-<th>ID</th>
-<th><input type="text" size=30></th>
-<th></th>
-</tr>
-<tr>
-<th>パスワード</th>
-<th><form action="changePassword" method="post">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th><input type="text" size=30></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>パスワード</th>
+      <th><form action="changePassword" method="post">
           @csrf
             <input type="password" name="password" size=30></th>
         <th><button type="submit" class="btn">変更</button> </form></th>
-</tr>
-<tr>
-<th>ユーザーネーム</th>
-<th><form action="changeUserName" method="post">
+    </tr>
+    <tr>
+      <th>ユーザーネーム</th>
+      <th><form action="changeUserName" method="post">
         @csrf
             <input type="text" name="user_name" size=30></th>
-<th><button type="submit" class="btn">変更</button> </form></th>
-</tr>
-<tr>
-<th>メールアドレス</th>
-<th><form action="changeMail" method="post">
+      <th><button type="submit" class="btn">変更</button> </form></th>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <th><form action="changeMail" method="post">
         @csrf
             <input type="text" name="mail" size=30></th>
-<th><button type="submit" class="btn">変更</button> </form></th>
-</tr>
-
-</table>
+      <th><button type="submit" class="btn">変更</button> </form></th>
+    </tr>
+  </table>
       
     </div>
 

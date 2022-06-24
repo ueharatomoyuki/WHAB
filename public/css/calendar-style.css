@@ -3,6 +3,8 @@ table.calendar {
   margin: 10px;
   position: relative;
   margin-bottom: 30px;
+  font-size: 20px;
+  text-align: center;
 }
 
 table.calendar, table.calendar th, table.calendar td {
