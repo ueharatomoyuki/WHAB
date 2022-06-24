@@ -18,10 +18,49 @@
     <a href="category" class="back-btn">支出の分類振り分け</a>
   
     <!-- <h1>収支差額グラフ</h1> -->
-      <div class="chart-container" style="position: relative; height:50vh; width:50vw">
-        <canvas id="myBarChart"></canvas>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-        <script>
+    <div class="chart-container" style="position: relative; height:50vh; width:50vw">
+      <canvas id="myBarChart"></canvas>
+    </div>
+
+    <center>
+        <h3><a href="?ym={{$prev}}">&lt;</a>{{$html_title}}<a href="?ym={{$next}}">&gt;</a></h3>
+    </center>    
+    <table class="calendar" border=1>
+      <form action="input" method="get" name="list">
+        <tr>
+            <th calss="weekend">日</th>
+            <th calss="weekday">月</th>
+            <th calss="weekday">火</th>
+            <th calss="weekday">水</th>
+            <th calss="weekday">木</th>
+            <th calss="weekday">金</th>
+            <th calss="saturday">土</th>
+        </tr>
+        
+        @foreach ($weeks as $week)
+          {!!$week!!}
+        @endforeach
+            
+      </form>
+    </table>
+
+    </div>
+  </div>
+
+  <x-exp />
+
+<center>
+ <footer>
+  <small>
+  お問い合わせはこちら
+  <!-- <a href=env("hello@exmp.com")>WHAB管理人</a> -->
+  <a href="mailto:' ."hello@exmp.com" .'?subject=このまま送信してください&body='.$bodyBox.'">WHAB管理人</a>
+  </small>
+ </footer>
+</center>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script>
 
     //  横棒グラフ(動きあり)
       
@@ -97,41 +136,6 @@
   });
 
   </script>
-
-    <center>
-        <h3><a href="?ym={{$prev}}">&lt;</a>{{$html_title}}<a href="?ym={{$next}}">&gt;</a></h3>
-    </center>    
-        <table class="calendar" border=1>
-        <form action="input" method="get" name="list">
-            <tr>
-                <th calss="weekend">日</th>
-                <th calss="weekday">月</th>
-                <th calss="weekday">火</th>
-                <th calss="weekday">水</th>
-                <th calss="weekday">木</th>
-                <th calss="weekday">金</th>
-                <th calss="saturday">土</th>
-            </tr>
-             
-                @foreach ($weeks as $week)
-                {!!$week!!}
-                @endforeach
-    </form>
-    </table>
-
-  </div>
-</div>
-
-<center>
- <footer>
-  <small>
-  お問い合わせはこちら
-  <!-- <a href=env("hello@exmp.com")>WHAB管理人</a> -->
-  <a href="mailto:' ."hello@exmp.com" .'?subject=このまま送信してください&body='.$bodyBox.'">WHAB管理人</a>
-  </small>
- </footer>
-</center>
-
   <script src="js/modal.js"></script>
 </body>
 

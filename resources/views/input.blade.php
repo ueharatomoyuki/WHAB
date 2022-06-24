@@ -27,6 +27,7 @@
       @foreach($ex as $e)
          <td> {{$e}}</td>
       @endforeach
+      <td><a class="btn" onclick="aaa()">編集</a></td>
     </tr>
     @endforeach
     @endif
@@ -107,7 +108,7 @@
 
         <div>
           <center><br>
-            <button type="submit" onclick="openModal()">登録</button>
+            <a class="btn" onclick="openModal()">登録</a>
             <x-modal mode="登録" />
           </center>
         </div>
@@ -115,7 +116,7 @@
     </div>
   </div>
 
-  <script src="js/modal.js"></script>
+  <script src="/js/modal.js"></script>
 
 </body>
 </html>

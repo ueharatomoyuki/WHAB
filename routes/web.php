@@ -6,6 +6,7 @@ use App\Http\Controllers\InsertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
+use App\Http\Controllers\expDispController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +93,5 @@ Route::get('/cumulative',function(){
 Route::get('/getinformation',function(){
     return view('getinformation');
 });
+
+Route::get('/expnses/{date}', [expDispController::class,'disp']);
