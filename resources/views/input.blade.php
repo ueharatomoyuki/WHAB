@@ -42,6 +42,7 @@
           </label>
         </div>
 
+        <h3>登録</h3>
         <div class="tab_container">     
         
           <input id="tab1" type="radio" name="tab_item" checked>
@@ -84,6 +85,7 @@
                   </tr>
                 </table>
                 <button type="submit" >登録</button>
+                <p><a href="/category">費目を追加する</a></p>
               </form>
               </p>
               

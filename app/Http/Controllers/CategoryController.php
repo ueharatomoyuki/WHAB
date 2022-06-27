@@ -50,6 +50,7 @@ class CategoryController extends Controller
                 Log::debug('category_select', [$category_select]);
             $delete = $request->delete;
                         
+
              for($i=0; $i<$cnt; $i++){
                     $in = DB::select("select * from categories where category_name = '$category_name[$i]'and user_id = '$id'");
                     if(count($in)==0){
@@ -64,6 +65,7 @@ class CategoryController extends Controller
                              DB::update("update categories set category_select = $category_select[$i] where id = $cid ");
                          }
                     }
+
                 if(isset($delete[$i])){
                 Log::debug('delete',[$delete[$i]]);
                 //削除された分類が書かれている支出はどうするかも本来は考えないといけない
