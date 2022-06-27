@@ -14,8 +14,8 @@ class InputController extends Controller
     {
         $user_id = session('userInf');
         $id = $user_id[0]->id; 
-        $exp = DB::select("select c.category_name, e.detail, e.money,e.id from expenses e inner join default_categories c on e.category_id = c.id where e.user_id = $id and date = '$date'");
-        $default = DB::select("select * from default_categories ");
+        $exp = DB::select("select c.category_name, e.detail, e.money,e.id from expenses e inner join categories c on e.category_id = c.id where e.user_id = $id and date = '$date'");
+        $default = DB::select("select * from categories where user_id = $id ");
         return view('input')->with('date', $date)->with('default',$default)->with('exp',$exp);
     }
 

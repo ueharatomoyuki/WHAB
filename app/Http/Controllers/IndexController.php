@@ -27,6 +27,16 @@ class IndexController extends Controller
             // $_SESSION['userInf'] = $userLog;
             $request->session()->put('userInf',$userLog);
             $request->session()->put('test','test');
+            $i = $userLog[0]->id ;
+            $in = DB::select("select * from categories where user_id = '$i'");
+            if(count($in)==0){
+                $default = DB::select("select * from default_categories "); 
+                foreach($default as $de){
+                DB::table('categories')->insert([
+                    ['category_name' => "$de->category_name",'category_select' => "$de->category_select",'user_id' => $i]
+                ]);
+            }
+            }
             return redirect('calendar');
         }
     }

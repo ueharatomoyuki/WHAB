@@ -85,6 +85,7 @@
                   </tr>
                 </table>
                 <button type="submit" >登録</button>
+                <p><a href="/category">費目を追加する</a></p>
               </form>
               </p>
               
