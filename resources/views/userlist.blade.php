@@ -38,7 +38,7 @@
                 <td>  {{$li->name}}</td>
                 <td> {{$li->mail}} </td>
                 <td> {{$li->role}}</td>
-            </tr>
+            </tr> 
             @endforeach
         </talbe>
 </div>
