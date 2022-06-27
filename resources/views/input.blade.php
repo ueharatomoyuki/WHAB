@@ -24,27 +24,25 @@
         </tr>
     @foreach($exp as $ex)
     <tr>
-      @foreach($ex as $e)
-         <td> {{$e}}</td>
-      @endforeach
+         <td> {{$ex->category_name}}</td>
+         <td> {{$ex->detail}}</td>
+         <td> {{$ex->money}}</td>
+      <td><a class="btn" onclick="update('{{$ex->id}}')">編集</a></td>
     </tr>
     @endforeach
     @endif
 </table>
+<x-update />
 
-      <form class="input-form" action="/insert" method="post">
-       @csrf
         <div class="input-item">  
           <label class="input-title">
 
             {{ $date }}
-            
+
           </label>
         </div>
 
-
         <div class="tab_container">     
-          <input type="hidden" name="date" value="{{ $date }}">
         
           <input id="tab1" type="radio" name="tab_item" checked>
           <label class="tab_item" for="tab1">支出</label>
@@ -52,10 +50,16 @@
           <input id="tab2" type="radio" name="tab_item">
           <label class="tab_item" for="tab2">収入</label>
 
-     
+
           <div class="tab_content" id="tab1_content">
             <div class="tab_content_description">
               <p class="c-txtsp">
+
+          <form class="input-form" action="/insert" method="post"> 
+          @csrf     
+          
+              <input type="hidden" name="date" value="{{ $date }}">
+
                 <table>
                   <tr> 
                     <th>　費目　　</th>
@@ -79,43 +83,48 @@
                     <td>　　sum　　</td>
                   </tr>
                 </table>
+                <button type="submit" >登録</button>
+              </form>
               </p>
+              
             </div>
           </div>
-
-          <div class="tab_content" id="tab2_content">
+          
+      <div class="tab_content" id="tab2_content">
             <div class="tab_content_description">
               <p class="c-txtsp">
+          <form class="input-form" action="/incomeInsert" method="post"> 
+          @csrf      
+          
+              <input type="hidden" name="date" value="{{ $date }}">
+
                 <table>
                   <tr> 
                     <th>　　　費目　　　</th>
                     <th>　　金額　　</th>
                   </tr>
                   <tr> 
-                    <td><input type="text" name="income" size=25></td>
-                    <td><input type="text" name="income-money" size=25></td>
+                    <td><input type="text" name="incomeDetail" size=25></td>
+                    <td><input type="text" name="incomeMoney" size=25></td>
                   </tr>
                   <tr> 
                     <td>　　　　　　合計</td>
                     <td>　　　　　　sum</td>
                   </tr>
                 </table>
+                <button type="submit" >登録</button>
+              </form> 
               </p>
+              
             </div>
           </div>
+          
         </div>
 
-        <div>
-          <center><br>
-            <button type="submit" onclick="openModal()">登録</button>
-            <x-modal mode="登録" />
-          </center>
-        </div>
-      </form>
     </div>
   </div>
 
-  <script src="js/modal.js"></script>
+  <script src="/js/modal.js"></script>
 
 </body>
 </html>

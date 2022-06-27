@@ -22,20 +22,14 @@
             <h2>メールアドレス変更</h2>
 
             <div class="password">
-                <form action="changeMail" method="post">
+                <form action="acountMail" method="post">
                     @csrf
-                    <h4><label>現在のメールアドレス</label>
-                    <input type="password" name="user_name" size=50 placeholder="aaa@aaa.co.jp">
+                    <h4><label>メールアドレス</label>
+                    <input type="text" name="mail" size=50 value="{{$mail}}">
                     </h4>
-                    <br>
-                    <h4><label>新しいメールアドレスを入力してください</label><br>
-                    <input type="password" name="user_name" size=50 placeholder="xxxx@aaa.co.jp">
-                    </h4>
-                    <h4><label>新しいメールアドレスを再入力してください</label><br>
-                    <input type="password" name="user_name" size=50 placeholder="xxxx@aaa.co.jp">
                     </h4>
                     <div><br>
-                        <button type="submit" onclick="openModal()">登録</button>
+                        <button type="submit">登録</button>
                         <x-modal mode="登録" />
                     </div>
                 </form>

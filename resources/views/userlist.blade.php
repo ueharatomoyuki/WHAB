@@ -19,31 +19,27 @@
     <div class="input-form">
         <h2>ユーザー管理一覧</h2>
 
-        <form>
-            <input type="text" name="text" size="30" placeholder="あいまい検索">
+        <form action="sortlist">
+            <input type="text" name="sort" size="30" placeholder="あいまい検索">
             <button type="submit" class="index-btn">検索</button>
         </form><br>
 
         <div>
         <table border=1>
             <tr >
-                <th>ユーザーネーム</th>
                 <th>ユーザーid</th>
+                <th>ユーザーネーム</th>
                 <th>メールアドレス</th>
                 <th>権限</th>
             </tr>
+            @foreach($list as $li)
             <tr>
-                <td> whab </td>
-                <td> 001 </td>
-                <td> whab@xxxx.co.jp </td>
-                <td> 0 </td>
+                <td> {{$li->id}} </td>
+                <td>  {{$li->name}}</td>
+                <td> {{$li->mail}} </td>
+                <td> {{$li->role}}</td>
             </tr>
-            <tr>
-                <td> whab2 </td>
-                <td> 002 </td>
-                <td> whab2@xxxx.co.jp </td>
-                <td> 0 </td>
-            </tr>
+            @endforeach
         </talbe>
 </div>
 
