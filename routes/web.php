@@ -114,6 +114,7 @@ Route::get('/category',function(){
     return view('category');
 });
 
+/* 累計グラフ */
 // Route::get('/cumulative',function(){
 //     return view('cumulative');
 // });
@@ -121,6 +122,10 @@ Route::get('/cumulative',[CumulativeController::class,'returndate']);
 Route::post('/cumulative',[CumulativeController::class,'returndate']);
 
 Route::get('/category',[CategoryController::class, 'categories']);
+
+Route::get('/category',[CategoryController::class, 'useridCheck']);
+Route::post('/cateinsert',[CategoryController::class, 'cateinsert']);
+Route::post('/catedel',[CategoryController::class, 'catedelete']);
 
 /* お知らせ閲覧 */
 Route::get('/getinformation',function(){
