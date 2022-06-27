@@ -20,26 +20,18 @@
         <h2>累計</h2>
         <p>検索したい内容と期間を選択してください<br>グラフで見ることが出来ます</p>
 
-        <form>
+        <form action='/cumulative' method="post">
+          @csrf
             費目選択
-            <select name="category" class="div-radio">
-                     
-                      <label><option value="1" >食品</option></label>
-                      <label><option value="2" >家賃</option></label>
+                      <select name="cate" class="div-radio">
+                      @foreach($default as $de)
+                      <label><option  value="{{$de->id}}" >{{$de->category_name}}</option></label>
+                      @endforeach
+                      </select><br>
+            
+            開始年月：<input type="month" name="date" min="{{ $startDate }}" max="{{ $endDate }}"><br>
+            終了年月：<input type="month" name="date" min="{{ $startDate }}" max="{{ $endDate }}"><br><br>
 
-            </select><br>
-            期間
-            <select name="start" class="div-radio">
-                     
-                      <label><option value="○○年○月" >○○年○月</option></label>
-                      <label><option value="○○年○月" >○○年○月</option></label>
-
-            </select><br>
-            <select name="end" class="div-radio">
-                     
-                      <label><option value="○○年○月" >○○年○月</option></label>
-                      <label><option value="○○年○月" >○○年○月</option></label>
-           </select><br>
             <button type="submit" class="index-btn">検索</button>
         </form>
 
@@ -47,42 +39,57 @@
   <canvas id="myBarChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
-<!--縦棒グラフ(動きなし)-->
+ <!--縦棒グラフ(動きなし)-->
   <script>
   var ctx = document.getElementById("myBarChart");
+
+  @foreach ($result1 as $val)
+    @foreach($val as $v)
+      let price = {{ $v }}
+      @endforeach
+    @endforeach
+
+    @foreach ($result2 as $val2)
+    @foreach($val2 as $d)
+      let date = {{ $d }}
+      @endforeach
+    @endforeach
+
+  let totals = [
+    {
+      date: date,
+      total: price
+    },
+  ];
+
   var myBarChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['8月1日', '8月2日', '8月3日', '8月4日', '8月5日', '8月6日', '8月7日'],
+      labels: totals.map(total => total['date']),//["2022-06"などの日付が入る]
       datasets: [
         {
-          label: 'A店 来客数',
-          data: [62, 65, 93, 85, 51, 66, 47],
+          label: '',//optionsのlegendの display: falseでラベル非表示、label:を消すとエラーで出力されなくなる
+          data: totals.map(date => date['total']),//[10円などの金額が入る]
           backgroundColor: "rgba(219,39,91,0.5)"
-        },{
-          label: 'B店 来客数',
-          data: [55, 45, 73, 75, 41, 45, 58],
-          backgroundColor: "rgba(130,201,169,0.5)"
-        },{
-          label: 'C店 来客数',
-          data: [33, 45, 62, 55, 31, 45, 38],
-          backgroundColor: "rgba(255,183,76,0.5)"
-        }
+        },
       ]
     },
     options: {
+      legend: {//凡例設定
+                display: false//表示設定
+              },
       title: {
         display: true,
-        text: '支店別 来客数'
+        text: '検索した費目名を出したい'
       },
       scales: {
         yAxes: [{
           ticks: {
             suggestedMax: 100,
             suggestedMin: 0,
-            stepSize: 20,
+            // stepSize: 20,
             callback: function(value, index, values){
-              return  value +  '人'
+              return  value 
             }
           }
         }]
@@ -94,10 +101,31 @@
 
     </div>
     
-</div>
-</div>
+ </div>
+ </div>
 
   <script src="js/modal.js"></script>
 
-</body>
-</html"
+  <table>
+    <thead>
+      <tr>
+        <th>累計</th>
+      </tr>
+    </thead>
+    <tbody>
+    @foreach ($result1 as $val)
+    @foreach($val as $v)
+      <tr>
+        <td>{{ $v }}</td>
+      </tr>
+      @endforeach
+    @endforeach
+    </tbody>
+</table>
+
+
+ </body>
+ </html"
+
+        
+          

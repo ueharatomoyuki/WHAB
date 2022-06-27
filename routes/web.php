@@ -6,6 +6,9 @@ use App\Http\Controllers\InsertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
+
+use App\Http\Controllers\CumulativeController;
+
 use App\Http\Controllers\expDispController;
 use Illuminate\Http\Request;
 
@@ -14,6 +17,7 @@ use App\Http\Controllers\endUpdateController;
 use App\Http\Controllers\AcountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+
 
 
 /*
@@ -109,17 +113,19 @@ Route::get('/sortlist',[AdminController::class,'sort']);
 Route::get('/category',function(){
     return view('category');
 });
+
+/* 累計グラフ */
+// Route::get('/cumulative',function(){
+//     return view('cumulative');
+// });
+Route::get('/cumulative',[CumulativeController::class,'returndate']);
+Route::post('/cumulative',[CumulativeController::class,'returndate']);
+
+Route::get('/category',[CategoryController::class, 'categories']);
+
 Route::get('/category',[CategoryController::class, 'useridCheck']);
 Route::post('/cateinsert',[CategoryController::class, 'cateinsert']);
 Route::post('/catedel',[CategoryController::class, 'catedelete']);
-
-
-/* 累計 */
-Route::get('/cumulative',function(){
-    return view('cumulative');
-});
-
-
 
 /* お知らせ閲覧 */
 Route::get('/getinformation',function(){
