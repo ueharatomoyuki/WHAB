@@ -31,7 +31,7 @@ class InsertController extends Controller
             return redirect('insert');
         }
 
-        $newUser = DB::table('users')->insert([
+         DB::table('users')->insert([
             ['name' => "$name",'password' => "$pass",'mail'=> "$mail","role" => 0]
         ]);
         return redirect('endInsert');
