@@ -92,7 +92,9 @@ Route::get('/userlist',function(){
 Route::get('/category',function(){
     return view('category');
 });
-Route::get('/category',[CategoryController::class, 'categories']);
+Route::get('/category',[CategoryController::class, 'useridCheck']);
+Route::post('/cateinsert',[CategoryController::class, 'cateinsert']);
+Route::post('/catedel',[CategoryController::class, 'catedelete']);
 
 
 /* 累計 */

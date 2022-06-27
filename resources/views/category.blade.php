@@ -21,59 +21,100 @@
         <p>支出の費目を変動費か固定費に分類しましょう</p>
 
 
-        <form action="category" method="post">
-
+    <form action="cateinsert" method="post">
+        @csrf
         <div>
-        <table>
+        <table id='table' border="1">
             <tr >
                 <th>費目</th>
                 <th>変動費</th>
                 <th>固定費</th>
                 <th>削除項目</th>
-                <th>変動費OR固定費</th>
             </tr>
 
             @if(isset($default))
-                @foreach($default as $de)
-                <tr>
-                    <td> {{$de->category_name}} </td>
-                         <input type="hidden" name='{{$de->id}}' value='{{$de->category_select}}' >
-                    <td> <input type="radio" name='{{$de->id}}' value="1" checked>   </td>
-                    <td> <input type="radio" name='{{$de->id}}' value="2"  >  </td>
-                    <td>  <input type="checkbox" name="delete" >  </td>
-                    <td> <select name="cate" class="div-radio">
-                         <label><option  value="1" >変動費</option></label>
-                         <label><option  value="2" >固定費</option></label>
 
-                        </select>
-                    </td>
+                @foreach($count as $cou)
+                    @foreach($cou as $co)
+                        {{$co}}
+                    @endforeach
+                @endforeach
+
+                <input type="hidden" name='count' value='{{$co}}' id="cou">
+
+                @foreach($default as $de)
+                {{ $de->id }}
+                <tr >
+                    <td> {{$de->category_name}} 
+                         <input type="hidden" name='id[{{$de->id}}]' value='{{$de->id}}' >
+                         <input type="hidden" name='category_name[{{$de->category_name}}]' value='{{$de->category_name}}' >
+                         </td>
+                        @if($de->category_select === 1 )
+                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="1" checked>  </td>   
+                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="2">  </td>
+                        @else 
+                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="1">  </td>
+                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="2" checked >  </td>
+                        @endif
+                    
+                    <td> <input type="checkbox" name="delete[{{$de->id}}]">  </td>
                     </tr>
                     @endforeach
                 @endif
-                <tr>
-                    <td>追加費目</td>
-                    <td>{{$de->id}}</td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tr>
+               <script>
+                function coladd() {
+                    var table = document.getElementById("table");
+                    var count = document.getElementById("cou"); //Id="cout"のタブ？をcaountに代入
+                    var cou = Number(count.value) + 1; //Number関数を使って、count.valueの値に1を代入
+                    //count.value = cou; //count.value に cou　のデータを入れて　inputタブのvalue値を更新
+                    var id = document.getElementById("id"); //Id="cout"のタブ？をcaountに代入
+                    // var cou = Number(count.value) + 1; //Number関数を使って、count.valueの値に1を代入
+                    // count.value = cou; //count.value に cou　のデータを入れて　inputタブのvalue値を更新
+                    // 行を行末に追加
+                    var row = table.insertRow(-1);
+                    //td分追加
+                    var cell1 = row.insertCell(-1);
+                    var cell2 = row.insertCell(-1);
+                    var cell3 = row.insertCell(-1);
+                    var cell4 = row.insertCell(-1);
+
+                    // セルの内容入力
+                    cell1.innerHTML = '<input type="text" name="category_name[' + cou + '] placeholder="費目追加"> <input type="hidden" name="id[' + cou + ']" "value=' + id + ">";
+                    cell2.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=1 checked>';
+                    cell3.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=2>';
+                    // cell4.innerHTML = '<input type="checkbox" name="delete">';
+                    cell4.innerHTML = '<input type="button" value=この行を削除 id="coladd" onclick="coldel(this)">';
+                }
+                function coldel(obj) {
+                    // 削除ボタンを押下された行を取得
+                    tr = obj.parentNode.parentNode;
+                    // trのインデックスを取得して行を削除する
+                    tr.parentNode.deleteRow(tr.sectionRowIndex);
+                }
+                </script>
+
+            </tr>
         </table>
-        </div>
-
-                    <select name="expense" class="div-radio">
-                      @foreach($default as $de)
-                      <label><option  value="{{$de->id}}" >{{$de->category_name}}</option></label>
-                      @endforeach
-                      </select>
-
-            <button type="submit" class="btn">登録</button>
-        </form>
-
     </div>
-    
+
+            <!-- <button type="submit" class="btn">削除</button>
+            </form> -->
+
+        <button type="submit" class="btn">登録</button>
+        <!-- <button type="submit" class="btn">削除</button> -->
+
+    </form> 
+
+    <input type="button" value="行を追加" id="coladd" onclick="coladd()"> 
+
+ 
+        
+    </div>
 </div>
 </div>
 
   <script src="js/modal.js"></script>
 
 </body>
-</html"
+</html>
