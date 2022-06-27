@@ -24,14 +24,15 @@
         </tr>
     @foreach($exp as $ex)
     <tr>
-      @foreach($ex as $e)
-         <td> {{$e}}</td>
-      @endforeach
-      <td><a class="btn" onclick="aaa()">編集</a></td>
+         <td> {{$ex->category_name}}</td>
+         <td> {{$ex->detail}}</td>
+         <td> {{$ex->money}}</td>
+      <td><a class="btn" onclick="update('{{$ex->id}}')">編集</a></td>
     </tr>
     @endforeach
     @endif
 </table>
+<x-update />
 
         <div class="input-item">  
           <label class="input-title">

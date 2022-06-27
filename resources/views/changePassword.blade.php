@@ -1,3 +1,10 @@
+<?php 
+use Illuminate\Support\Facades\Log;
+session_start();
+$message = "";
+if(!empty($_SESSION['passError']))
+$message = $_SESSION['passError'];
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,23 +26,25 @@
       </P>
  
         <div class="input-form">
+          <p class="error">{{$message}}</p>
             <h2>パスワード変更</h2>
 
             <div class="password">
-                <form action="changePassword" method="post">
+                <form action="AcountPassword" method="post">
                     @csrf
-                    <h4><label>現在のパスワード</label>
-                    <input type="password" name="user_name" size=50 placeholder="aaaa">
+                    <h4><label>現在のパスワードを入力してください</label>
+                    
+                    <input type="password" name="pass" size=50 placeholder="aaaa">
                     </h4>
                     <br>
                     <h4><label>新しいパスワードを入力してください</label><br>
-                    <input type="password" name="user_name" size=50 placeholder="xxxx">
+                    <input type="password" name="newPass1" size=50 placeholder="xxxx">
                     </h4>
-                    <h4><label>新しいパスワードを再入力してください</label><br>
-                    <input type="password" name="user_name" size=50 placeholder="xxxx">
+                    <h4><label>新しいパスワードを再入力してください(確認)</label><br>
+                    <input type="password" name="newPass2" size=50 placeholder="xxxx">
                     </h4>
                     <div><br>
-                        <button type="submit" onclick="openModal()">登録</button>
+                        <button type="submit">登録</button>
                         <x-modal mode="登録" />
                     </div>
                 </form>
@@ -49,3 +58,4 @@
 
 </body>
 </html>
+<?php unset($_SESSION['passError']);?>

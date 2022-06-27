@@ -21,19 +21,19 @@
 
       <div>
         <h3><label>　　　ID　　　</label>
-        <input type="text" size=30>
+        <span>　　{{$user[0]->id}}</span>
         </h3>
       </div>
 
       <div class="password">
         <h3><label>ユーザーネーム</label>
-        <input type="text" size=30>
+        <span>　　{{$user[0]->name}}</span>
         </h3>
       </div>
             
       <div class="password">
         <h3><label>メールアドレス</label>
-        <input type="text" size=30>
+        <span>　　{{$user[0]->mail}}</span>
         </h3>
       </div>
       

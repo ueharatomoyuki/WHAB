@@ -22,13 +22,13 @@
             <h2>ユーザーネーム変更</h2><br>
 
             <div class="password">
-                <form action="changeUserName" method="post">
+                <form action="changeAcountName" method="post">
                     @csrf
                     <h4><label>新しいユーザーネームを登録します</label><br>
-                    <input type="text" name="user_name" size=50 placeholder="whab">
+                    <input type="text" name="user_name" size=50 value="{{$name}}">
                     </h4>
                     <div><br>
-                        <button type="submit" onclick="openModal()">登録</button>
+                        <button type="submit" >登録</button>
                         <x-modal mode="登録" />
                     </div>
                 </form>

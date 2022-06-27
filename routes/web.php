@@ -7,6 +7,12 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
 use App\Http\Controllers\expDispController;
+use Illuminate\Http\Request;
+
+use App\Http\Controllers\updateController;
+use App\Http\Controllers\endUpdateController;
+use App\Http\Controllers\AcountController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 
 
@@ -61,31 +67,42 @@ Route::post('/incomeInsert',[InputController::class, 'incomeInsert']);
 
 /* アカウント情報関連 */
 Route::get('/acount',function(){
-    return view('acount'); 
+    $user_id = session('userInf');
+    return view('acount')->with('user',$user_id);
 });
 
-Route::post('/changePassword',function(){
+Route::get('/changePassword',function(){
     return view('changePassword');
 });
 
-Route::post('/changeUserName',function(){
-    return view('changeUserName');
+Route::post('/AcountPassword',[AcountController::class,'pass']);
+
+Route::get('/changeUserName',function(){
+    $user = session('userInf');
+    $name = $user[0]->name; 
+    return view('changeUserName')->with('name',$name);
 });
 
-Route::post('/changeMail',function(){
-    return view('changeMail');
+Route::post('changeAcountName',[AcountController::class,'name']);
+
+Route::get('/changeMail',function(){
+    $user = session('userInf');
+    $mail = $user[0]->mail;
+    return view('changeMail')->with('mail',$mail);
 });
+
+Route::post('acountMail',[AcountController::class,'mail']);
 
 /* 管理者専用ページ関連 */
 Route::get('/admin',function(){
-    return view('admin');
+    $user = session('userInf');
+    return view('admin')->with('user',$user);
 });
 Route::get('/information',function(){
     return view('information');
 });
-Route::get('/userlist',function(){
-    return view('userlist');
-});
+Route::get('/userlist',[AdminController::class,'list']);
+Route::get('/sortlist',[AdminController::class,'sort']);
 
 
 /* 支出分類振り分け関連 */
@@ -108,5 +125,10 @@ Route::get('/cumulative',function(){
 Route::get('/getinformation',function(){
     return view('getinformation');
 });
-
+//非同期通信
 Route::get('/expnses/{date}', [expDispController::class,'disp']);
+Route::get('/update/{id}',[updateController::class,'update']);
+//
+
+//更新
+Route::post('/endUpdate',[endUpdateController::class,'update']);
