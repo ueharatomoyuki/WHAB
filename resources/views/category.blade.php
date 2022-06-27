@@ -34,32 +34,25 @@
 
             @if(isset($default))
 
-                @foreach($count as $cou)
-                    @foreach($cou as $co)
-                        {{$co}}
-                    @endforeach
-                @endforeach
+                <input type="hidden" name='count' value='{{$count[0]->cou}}' id="cou">
 
-                <input type="hidden" name='count' value='{{$co}}' id="cou">
-
-                @foreach($default as $de)
-                {{ $de->id }}
+                @for($i=0;$i<=$count[0]->cou;$i++)
                 <tr >
-                    <td> {{$de->category_name}} 
-                         <input type="hidden" name='id[{{$de->id}}]' value='{{$de->id}}' >
-                         <input type="hidden" name='category_name[{{$de->category_name}}]' value='{{$de->category_name}}' >
+                    <td> {{$default[$i]->category_name}} 
+                         <input type="hidden" name='id[{{$default[$i]->id}}]' value='{{$default[$i]->id}}' >
+                         <input type="hidden" name='category_name[{{$i}}]' value='{{$default[$i]->category_name}}' >
                          </td>
-                        @if($de->category_select === 1 )
-                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="1" checked>  </td>   
-                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="2">  </td>
+                        @if($default[$i]->category_select === 1 )
+                        <td>  <input type="radio" name='category_select[{{$i}}]' value="1" checked>  </td>   
+                        <td>  <input type="radio" name='category_select[{{$i}}]' value="2">  </td>
                         @else 
-                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="1">  </td>
-                        <td>  <input type="radio" name='category_select[{{$de->id}}]' value="2" checked >  </td>
+                        <td>  <input type="radio" name='category_select[{{$i}}]' value="1">  </td>
+                        <td>  <input type="radio" name='category_select[{{$i}}]' value="2" checked >  </td>
                         @endif
                     
-                    <td> <input type="checkbox" name="delete[{{$de->id}}]">  </td>
+                    <td> <input type="checkbox" name="delete[{{$i}}]">  </td>
                     </tr>
-                    @endforeach
+                    @endfor
                 @endif
             <tr>
                <script>
@@ -78,9 +71,8 @@
                     var cell2 = row.insertCell(-1);
                     var cell3 = row.insertCell(-1);
                     var cell4 = row.insertCell(-1);
-
                     // セルの内容入力
-                    cell1.innerHTML = '<input type="text" name="category_name[' + cou + '] placeholder="費目追加"> <input type="hidden" name="id[' + cou + ']" "value=' + id + ">";
+                    cell1.innerHTML = '<input type="text" name= "category_name[' + cou + ']" placeholder="費目追加"> <input type="hidden" name="id[' + cou + ']" "value=' + id + ">";
                     cell2.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=1 checked>';
                     cell3.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=2>';
                     // cell4.innerHTML = '<input type="checkbox" name="delete">';
