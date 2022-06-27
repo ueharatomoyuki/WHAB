@@ -6,6 +6,8 @@ use App\Http\Controllers\InsertController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CalenderControler;
 use App\Http\Controllers\InputController;
+use App\Http\Controllers\CumulativeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -85,9 +87,12 @@ Route::get('/userlist',function(){
 Route::get('/category',function(){
     return view('category');
 });
-Route::get('/cumulative',function(){
-    return view('cumulative');
-});
+// Route::get('/cumulative',function(){
+//     return view('cumulative');
+// });
+Route::get('/cumulative',[CumulativeController::class,'returndate']);
+Route::post('/cumulative',[CumulativeController::class,'returndate']);
+
 
 Route::get('/getinformation',function(){
     return view('getinformation');
