@@ -293,7 +293,7 @@ transform: scale(1, 1);
   cursor: pointer; /* カーソルを上にのせた際の表示 */
   outline: none; /* ボタンクリック時の枠線 */
 }
-/* 行削除ボタ */
+/* 行削除ボタン */
 .delete-btn {
   display: inline-block;
   width: 80px;
@@ -309,22 +309,7 @@ transform: scale(1, 1);
   cursor: pointer; /* カーソルを上にのせた際の表示 */
   outline: none; /* ボタンクリック時の枠線 */
 }
-/* 追加ボタン */
-/* .add-btn  { .input-form button */
-  /* display: inline-block;
-  width: 150px;
-  padding: 10px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 21px;
-  font-weight: bold;
-  background-color: #fa8072;
-  border: none;
-  border-radius: 10px;
-  text-decoration: none;
-  cursor: pointer; カーソルを上にのせた際の表示
-  outline: none; ボタンクリック時の枠線 */
-/* } */
+
 
 .password {
   margin-bottom: 30px;
@@ -383,6 +368,7 @@ transform: scale(1, 1);
   cursor: pointer; /* カーソルを上にのせた際の表示 */
   /* outline: none; ボタンクリック時の枠線 */
 /* } */
+
 /* モーダル */
 #modal {
   display: none;
@@ -540,18 +526,3 @@ input[name="tab_item"] {
   color: #fff;
 }
 
-/*テーブル*/
-/* table {
-  width:500px;
-  text-align: left;
-  border-collapse: collapse;
- }
- th {
-  padding: 10px;
-  border-bottom: solid 5px #748ca5;
- }
- 
- td {
-  padding: 10px;
-  border-bottom: solid 1px #748ca5;
- } */
