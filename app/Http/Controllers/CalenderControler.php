@@ -83,7 +83,7 @@ class CalenderControler extends Controller
             $week .= '<td class="today">' . $day.'<br>' ."<a class='button021' onclick='sample(\"$date\")'>";//今日の場合はclassにtodayをつける
             if(!empty($exs)){
                    $week .= $exs[0]->total;
-               }$week .= 0;
+               }else{$week .= 0;}
         } else {
             $week .= "<td>". $day.'<br>' ."<a class='button021' onclick='sample(\"$date\")'>";
             if(!empty($exs)){

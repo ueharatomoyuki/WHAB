@@ -17,7 +17,7 @@ use App\Http\Controllers\endUpdateController;
 use App\Http\Controllers\AcountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\InformationController;
 
 
 /*
@@ -107,13 +107,13 @@ Route::get('/information',function(){
 });
 Route::get('/userlist',[AdminController::class,'list']);
 Route::get('/sortlist',[AdminController::class,'sort']);
-
+Route::post('/infor',[InformationController::class,'information']);
+Route::get('/getinformation',[InformationController::class,'getinformation']);
 
 /* 支出分類振り分け関連 */
 Route::get('/category',function(){
     return view('category');
 });
-
 /* 累計グラフ */
 // Route::get('/cumulative',function(){
 //     return view('cumulative');
@@ -128,9 +128,9 @@ Route::post('/cateinsert',[CategoryController::class, 'cateinsert']);
 Route::post('/catedel',[CategoryController::class, 'catedelete']);
 
 /* お知らせ閲覧 */
-Route::get('/getinformation',function(){
-    return view('getinformation');
-});
+// Route::get('/getinformation',function(){
+//     return view('getinformation');
+// });
 //非同期通信
 Route::get('/expnses/{date}', [expDispController::class,'disp']);
 Route::get('/update/{id}',[updateController::class,'update']);

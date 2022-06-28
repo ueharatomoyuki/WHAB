@@ -19,33 +19,26 @@
     <div class="input-form">
         <h2>お知らせ</h2>
 
-        <table>
+
+
+                <div>
+        <table >
             <tr >
                 <th>日時</th>
                 <th>内容</th>
-                <th>削除項目</th>
+                <th></th>
             </tr>
+            @foreach($getMessege as $getMe)
+
             <tr>
-                <td> 〇月●日〇時〇分 </td>
-                <td> XXX実装しました </td>
-                <td> □ </td>
-            </tr>
-            <tr>
-                <td> 〇月●日〇時〇分 </td>
-                <td> XXX実装しました </td>
-                <td> □ </td>
-            </tr>
-            <tr>
-                <td> 〇月●日〇時〇分 </td>
-                <td> XXX実装しました </td>
-                <td> □ </td>
-            </tr>
-            <tr>
-                <td> 〇月●日〇時〇分 </td>
-                <td> XXX実装しました </td>
-                <td> □ </td>
-            </tr>
+                <td> {{$getMe->date}} </td>
+                <td>  {{$getMe->messege}}</td>
+                <td>  </td>
+            </tr> 
+
+            @endforeach
         </talbe>
+      </div>
 
        
      </div>
