@@ -7,20 +7,20 @@
   <link rel="stylesheet" href="/css/schedule-style.css">
   <title>家計簿</title>
   <style>
-table {
- width:500px;
- text-align: left;
- border-collapse: collapse;
-}
-th {
- padding: 10px;
- border-bottom: solid 5px #748ca5;
-}
+    table {
+     width:500px;
+     text-align: left;
+     border-collapse: collapse;
+    }
+    th {
+     padding: 10px;
+     border-bottom: solid 5px #37beb0;
+    }
 
-td {
- padding: 10px;
- border-bottom: solid 1px #748ca5;
-}
+    td {
+     padding: 10px;
+     border-bottom: solid 1px #37beb0;
+    }
   </style>
 </head>
 
@@ -41,7 +41,7 @@ td {
         </div>
 
       @if(!count($exp) == 0)
-      <table class="exp" border=1>
+      <table class="exp">
         <tr>
           <th class="category">費目</th>
           <th class='deital'>詳細</th>
@@ -59,10 +59,10 @@ td {
     @endif
 </table>
 <x-update />
+<br>
+<br>
 
-
-
-        <h3>登録</h3>
+        <!-- <h3>登録</h3> -->
         <div class="tab_container">     
         
           <input id="tab1" type="radio" name="tab_item" checked>
@@ -98,12 +98,7 @@ td {
                     <td><input type="text" name="expenseDetail" size=20></td>
                     <td><input type="text" name="expenseMoney" size=20></td>
                   </tr>
-                  <tr>
-                    <td></td>
-                    <td>　　　合計　　　</td>
-                    <td>　　sum　　</td>
-                  </tr>
-                </table>
+                </table><br>
                 <button type="submit" class="register-btn">登録</button>
                 <p><a href="/category" class="exp-register-btn">費目を追加する</a></p>
               </form>
@@ -129,11 +124,7 @@ td {
                     <td><input type="text" name="incomeDetail" size=25></td>
                     <td><input type="text" name="incomeMoney" size=25></td>
                   </tr>
-                  <tr> 
-                    <td>　　　　　　合計</td>
-                    <td>　　　　　　sum</td>
-                  </tr>
-                </table>
+                </table><br>
                 <button type="submit" class="register-btn" >登録</button>
               </form> 
               </p>
