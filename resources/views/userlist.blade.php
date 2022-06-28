@@ -6,6 +6,22 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/schedule-style.css">
   <title>管理者-ユーザー会員一覧</title>
+  <style>
+    table {
+     width:500px;
+     text-align: left;
+     border-collapse: collapse;
+    }
+    th {
+     padding: 10px;
+     border-bottom: solid 5px #37beb0;
+    }
+
+    td {
+     padding: 10px;
+     border-bottom: solid 1px #37beb0;
+    }
+  </style>
 </head>
 
 <body>
@@ -16,7 +32,7 @@
    
   <p><a href="admin" class="back-btn">管理者専用へ戻る</a></p>
     
-    <div class="input-form">
+    <!-- <div class="input-form"> -->
         <h2>ユーザー管理一覧</h2>
 
         <form action="sortlist">
@@ -25,7 +41,7 @@
         </form><br>
 
         <div>
-        <table border=1>
+        <table >
             <tr >
                 <th>ユーザーid</th>
                 <th>ユーザーネーム</th>
@@ -41,9 +57,9 @@
             </tr> 
             @endforeach
         </talbe>
-</div>
+      </div>
 
-    </div>
+    <!-- </div> -->
     
 </div>
 </div>

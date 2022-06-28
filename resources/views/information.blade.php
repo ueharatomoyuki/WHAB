@@ -19,17 +19,18 @@
     <div class="input-form">
         <h2>お知らせ発信</h2>
 
-
+<form action="infor" method="post">
+  @csrf
         <h3><label>発信内容</label></h3>
             <textarea rows="10" cols="25" name="informessege"></textarea>
 
       <div>
           <center><br>
-            <button type="submit" class="register-btn" onclick="openModal()">送信</button>
+            <button type="button" class="register-btn" onclick="openModal()">送信</button>
             <x-modal mode="送信" />
           </center>
       </div>
-
+</form>
     </div>
     
 </div>
