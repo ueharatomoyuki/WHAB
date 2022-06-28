@@ -98,7 +98,7 @@
                     {
                       label:'差額(残高)',
                       data: [0, 0, difference],//差額を表示させる為の配列
-                      backgroundColor: ["rgba(219,39,91,0.5)","pink", "rgba(219,50,50,0.4)"]
+                      backgroundColor: ["rgba(219,39,91,0.5)","pink", "rgba(255,165,0,0.4)"]
                     }
                     
                   ]
