@@ -71,7 +71,6 @@
                     var cell2 = row.insertCell(-1);
                     var cell3 = row.insertCell(-1);
                     var cell4 = row.insertCell(-1);
-
                     // セルの内容入力
                     cell1.innerHTML = '<input type="text" name= "category_name[' + cou + ']" placeholder="費目追加"> <input type="hidden" name="id[' + cou + ']" "value=' + id + ">";
                     cell2.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=1 checked>';
