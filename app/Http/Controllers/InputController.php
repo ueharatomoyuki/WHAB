@@ -51,7 +51,7 @@ class InputController extends Controller
              'user_id'=> $user_id[0]->id
              ]
         ]);
-         return redirect('calendar');
+         return redirect("/input/$date");
     }
 
     //収入登録
