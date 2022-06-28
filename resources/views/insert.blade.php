@@ -13,7 +13,7 @@ if(isset($_SESSION['uName'])){
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <title>新規登録</title>
 </head>
 
@@ -64,14 +64,13 @@ if(isset($_SESSION['uName'])){
         <span class="error">{{$message}}</span>
         @enderror
       </div>
-      <button type="submit" class="btn">登録</button>
+      <button type="submit" class="register-btn">登録</button>
     </form>
   </div>
 </div>
-  <a href="index" class="btn">ログイン画面へ戻る</a>
-  <footer>
-    <small>Copyright &copy; C-Sche, all rights reserved.</small>
-  </footer>
+
+<a href="index" class="back-btn">ログイン画面へ戻る</a>
+
 
 </body>
 

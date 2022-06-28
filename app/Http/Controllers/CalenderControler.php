@@ -80,12 +80,12 @@ class CalenderControler extends Controller
 
                 
         if($today == $date){
-            $week .= '<td class="today">' . $day."<a class='btn' onclick='sample(\"$date\")'>";//今日の場合はclassにtodayをつける
+            $week .= '<td class="today">' . $day.'<br>' ."<a class='button021' onclick='sample(\"$date\")'>";//今日の場合はclassにtodayをつける
             if(!empty($exs)){
                    $week .= $exs[0]->total;
                }$week .= 0;
         } else {
-            $week .= "<td>". $day ."<a class='btn' onclick='sample(\"$date\")'>";
+            $week .= "<td>". $day.'<br>' ."<a class='button021' onclick='sample(\"$date\")'>";
             if(!empty($exs)){
              Log::debug('sum', [$exs[0]->total]);
                 $week .= $exs[0]->total;

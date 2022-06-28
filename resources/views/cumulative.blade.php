@@ -21,21 +21,29 @@
         <p>検索したい内容と期間を選択してください<br>グラフで見ることが出来ます</p>
 
         <form action='/cumulative' method="post">
-          @csrf
-            費目選択
-                      <select name="cate" class="div-radio">
+        @csrf
+          <table>
+            <tr>
+              <td>費目選択</td>
+              <td colspan="2"><select name="cate" class="div-radio">
                       @foreach($default as $de)
                       <label><option  value="{{$de->id}}" >{{$de->category_name}}</option></label>
                       @endforeach
-                      </select><br>
-            
-            開始年月：<input type="month" name="date" min="{{ $startDate }}" max="{{ $endDate }}"><br>
-            終了年月：<input type="month" name="date" min="{{ $startDate }}" max="{{ $endDate }}"><br><br>
+                      </select></td>
+              <td rowspan="2"><button type="submit" class="index-btn">検索</button></td>
+            </tr>
+            <tr>
+              <td>期間選択</td>
 
-            <button type="submit" class="index-btn">検索</button>
+              <td><input type="month" name="date" min="{{ $startDate }}" max="{{ $endDate }}"></td>
+              <td><input type="month" name="date" min="{{ $startDate }}" max="{{ $endDate }}"></td>
+
+            </tr>
+          </table>
         </form>
 
-        <h1>棒グラフ</h1>
+<br>
+<>
   <canvas id="myBarChart"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 

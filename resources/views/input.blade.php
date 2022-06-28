@@ -6,6 +6,22 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/schedule-style.css">
   <title>家計簿</title>
+  <style>
+table {
+ width:500px;
+ text-align: left;
+ border-collapse: collapse;
+}
+th {
+ padding: 10px;
+ border-bottom: solid 5px #748ca5;
+}
+
+td {
+ padding: 10px;
+ border-bottom: solid 1px #748ca5;
+}
+  </style>
 </head>
 
 <body>
@@ -14,33 +30,37 @@
   <div class="main-parent">
     <div class="main">
 
-      <p><a href="/calendar" class="back-btn">マイページへ戻る</a></P>
+      <p><a href="/calendar" class="back-btn">マイページへ戻る</a></p>
+
+      <div class="input-item">  
+          <label class="input-title">
+
+          <h2>  {{ $date }} </h2>
+
+          </label>
+        </div>
+
       @if(!count($exp) == 0)
       <table class="exp" border=1>
         <tr>
           <th class="category">費目</th>
           <th class='deital'>詳細</th>
           <th class="money">金額</th>
+          <th></th>
         </tr>
     @foreach($exp as $ex)
     <tr>
          <td> {{$ex->category_name}}</td>
          <td> {{$ex->detail}}</td>
          <td> {{$ex->money}}</td>
-      <td><a class="btn" onclick="update('{{$ex->id}}')">編集</a></td>
+      <td><center><a class="register-btn" onclick="update('{{$ex->id}}')">編集</a><center></td>
     </tr>
     @endforeach
     @endif
 </table>
 <x-update />
 
-        <div class="input-item">  
-          <label class="input-title">
 
-            {{ $date }}
-
-          </label>
-        </div>
 
         <h3>登録</h3>
         <div class="tab_container">     
@@ -56,7 +76,7 @@
             <div class="tab_content_description">
               <p class="c-txtsp">
 
-          <form class="input-form" action="/insert" method="post"> 
+          <form action="/insert" method="post"> 
           @csrf     
           
               <input type="hidden" name="date" value="{{ $date }}">
@@ -84,8 +104,8 @@
                     <td>　　sum　　</td>
                   </tr>
                 </table>
-                <button type="submit" >登録</button>
-                <p><a href="/category">費目を追加する</a></p>
+                <button type="submit" class="register-btn">登録</button>
+                <p><a href="/category" class="exp-register-btn">費目を追加する</a></p>
               </form>
               </p>
               
@@ -95,7 +115,7 @@
       <div class="tab_content" id="tab2_content">
             <div class="tab_content_description">
               <p class="c-txtsp">
-          <form class="input-form" action="/incomeInsert" method="post"> 
+          <form action="/incomeInsert" method="post"> 
           @csrf      
           
               <input type="hidden" name="date" value="{{ $date }}">
@@ -114,7 +134,7 @@
                     <td>　　　　　　sum</td>
                   </tr>
                 </table>
-                <button type="submit" >登録</button>
+                <button type="submit" class="register-btn" >登録</button>
               </form> 
               </p>
               

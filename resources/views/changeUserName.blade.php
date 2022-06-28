@@ -28,7 +28,7 @@
                     <input type="text" name="user_name" size=50 value="{{$name}}">
                     </h4>
                     <div><br>
-                        <button type="submit" >登録</button>
+                        <button type="button" class="register-btn" onclick="openModal()">登録</button>
                         <x-modal mode="登録" />
                     </div>
                 </form>

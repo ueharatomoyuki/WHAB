@@ -5,8 +5,117 @@ header {
   justify-content: space-between;
   border-bottom: solid 5px #f7f268;
   background-color: #ffffff;
+  padding: 5px;
+}
+
+/*WHABロゴ 葉っぱ*/
+h1 {
+  position: relative;
+  font-family: 'Sacramento', cursive;
+  color: #27a15a;
+  font-size: 30px;
+  padding: 5px 10px;
+  text-align: center;
+  margin: 0.8em 0.5em;
+}
+h1:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 60%;
+  width: 150px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #27a15a;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/*header遷移用ボタン*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/* 背景用*/
+body {
   padding: 10px;
 }
+
+.bt,
+a.bt,
+button.bt {
+  font-size: 1.0rem;
+  font-weight: 1000;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 5rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.bt-border-shadow {
+  padding: calc(3.0rem - 15px) 3rem 1.5rem;
+
+  background: #fff;
+}
+
+a.bt-border-shadow:before {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+}
+
+a.bt-border-shadow:hover {
+  padding: calc(4.0rem - 10px) 3rem;
+}
+
+a.bt-border-shadow:hover:before {
+  top: 0;
+  left: 0;
+}
+
+a.bt-border-shadow--color {
+  border-radius: 5px;
+  background: rgb(167, 251, 115);
+}
+
+a.bt-border-shadow--color:before {
+  border-radius: 5px;
+}
+
 
 /* メイン 
 .main-calendar {
@@ -36,7 +145,6 @@ footer {
 small {
   font-size: 20px;
   color: #a9a9a9;
-
 }
 
 /* 見出し、リンク */
@@ -48,6 +156,7 @@ h3 {
   margin: 10px 0px;
 }
 
+
 /* ログインフォーム */
 .login-form {
   background-color: #f0f8ff;
@@ -57,43 +166,11 @@ h3 {
   padding: 30px;
   box-shadow: 3px 3px 3px #c0c0c0;
 }
-
 .login-form input {
   height: 20px;
 }
 
-/*header用ボタン*/
-.header-btn{
-  /*display: inline-block;*/
-  width: 150px;
-  padding: 30px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #ffcf8d;
-  border: none;
-  border-radius: 10px;
-  text-decoration: none;
-  cursor: pointer; /* カーソルを上にのせた際の表示 */
-  outline: none; /* ボタンクリック時の枠線 */
-}
-/*logout用*/
-.logout-btn{
-  display: inline-block;
-  width: 150px;
-  padding: 30px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #ffc0c0;
-  border: none;
-  border-radius: 10px;
-  text-decoration: none;
-  cursor: pointer; /* カーソルを上にのせた際の表示 */
-  outline: none; /* ボタンクリック時の枠線 */
-}
+
 /*検索ボタン*/
 .index-btn {
   display: inline-block;
@@ -103,7 +180,7 @@ h3 {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  background-color: #3bfbe1;
+  background-color: #04bca4;
   border: none;
   border-radius: 10px;
   text-decoration: none;
@@ -111,9 +188,11 @@ h3 {
   outline: none; /* ボタンクリック時の枠線 */ 
 }
 
+
+/*戻るボタン*/
 .back-btn {
   display: inline-block;
-  width: 150px;
+  width: 200px;
   padding: 10px;
   color: #ffffff;
   text-align: center;
@@ -122,31 +201,117 @@ h3 {
   background-color: #80e98b;
   border: none;
   border-radius: 10px;
-  text-decoration: none;
-  cursor: pointer; /* カーソルを上にのせた際の表示 */
-  outline: none; /* ボタンクリック時の枠線 */
+  text-decoration: none; 
+   cursor: pointer; /* カーソルを上にのせた際の表示 */
+   outline: none; /*ボタンクリック時の枠線 */
+ } 
+
+
+/* カレンダー日付内金額ボタン */
+.button021 {
+    background: linear-gradient(transparent 70%, #a5f5da 80%);
+ }
+.button021::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+background-color: rgba(116, 244, 142, 0.2);
+transition: all 0.3s;
+}
+.button021:hover::before {
+opacity: 0;
+transform: scale(0.4, 0.4);
+}
+.button021::after {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+opacity: 0;
+transition: all 0.3s;
+border: 2px solid rgba(103, 249, 191, 0.4);
+transform: scale(1.2, 1.2);
+}
+.button021:hover::after {
+opacity: 1;
+transform: scale(1, 1);
 }
 
-/* ボタン */
-.btn {
+
+/* 登録・編集等用ボタン */
+.register-btn {
   display: inline-block;
   width: 100px;
   padding: 10px;
-  color: #ffffff;
+  color: #017180;
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  background-color: #87cefa;
+  background-color: #60fd7f;
   border: none;
   border-radius: 10px;
   text-decoration: none;
   cursor: pointer; /* カーソルを上にのせた際の表示 */
   outline: none; /* ボタンクリック時の枠線 */
 }
-
-/* 追加ボタン */
-.add-btn  { /*.input-form button*/
+/*管理者専用ボタン*/
+.admin-btn {
   display: inline-block;
+  width: 200px;
+  padding: 10px;
+  color: #6f096f;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #f1f12c;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none; 
+   cursor: pointer; /* カーソルを上にのせた際の表示 */
+   outline: none; /*ボタンクリック時の枠線 */
+ } 
+/* 収支登録画面から費目振り分けページへ遷移するボタン */
+.exp-register-btn {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  color: #017180;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #60fd7f;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  outline: none; /* ボタンクリック時の枠線 */
+}
+/* 行削除ボタ */
+.delete-btn {
+  display: inline-block;
+  width: 80px;
+  padding: 5px;
+  color: #017180;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #64e27d;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  outline: none; /* ボタンクリック時の枠線 */
+}
+/* 追加ボタン */
+/* .add-btn  { .input-form button */
+  /* display: inline-block;
   width: 150px;
   padding: 10px;
   color: #ffffff;
@@ -157,9 +322,9 @@ h3 {
   border: none;
   border-radius: 10px;
   text-decoration: none;
-  cursor: pointer; /* カーソルを上にのせた際の表示 */
-  outline: none; /* ボタンクリック時の枠線 */
-}
+  cursor: pointer; カーソルを上にのせた際の表示
+  outline: none; ボタンクリック時の枠線 */
+/* } */
 
 .password {
   margin-bottom: 30px;
@@ -203,9 +368,25 @@ h3 {
 }
 
 /* モーダル */
+/* #modal {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  color: #017180;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #60fd7f;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer; /* カーソルを上にのせた際の表示 */
+  /* outline: none; ボタンクリック時の枠線 */
+/* } */
+/* モーダル */
 #modal {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -214,6 +395,35 @@ h3 {
   border-radius: 5px;
   background-color: white;
   z-index: 10;
+}
+
+/* モーダル用ボタン */
+.modal_btn {
+  width: 100px !important;
+  font-size: 14px !important;
+}
+
+/* 背景を暗くする */
+#fadeLayer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  display: none;
+  z-index: 1;
+}
+
+/* エラー表示 */
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.div-radio {
+  outline: none;
 }
 
 #exp {
@@ -243,9 +453,24 @@ z-index: 10;
 }
 
 /* モーダル用ボタン */
-.modal_btn {
+/* .ori-modal_btn {
   width: 100px !important;
   font-size: 14px !important;
+} */
+.modal_btn {
+  display: inline-block;
+width: 80px;
+padding: 5px;
+color: #017180;
+text-align: center;
+font-size: 10px;
+font-weight: bold;
+background-color: #64e27d;
+border: none;
+border-radius: 3px;
+text-decoration: none;
+cursor: pointer; /* カーソルを上にのせた際の表示 */
+outline: none; /* ボタンクリック時の枠線 */
 }
 
 /* 背景を暗くする */
@@ -314,3 +539,19 @@ input[name="tab_item"] {
   background-color: #37beb0 ;
   color: #fff;
 }
+
+/*テーブル*/
+/* table {
+  width:500px;
+  text-align: left;
+  border-collapse: collapse;
+ }
+ th {
+  padding: 10px;
+  border-bottom: solid 5px #748ca5;
+ }
+ 
+ td {
+  padding: 10px;
+  border-bottom: solid 1px #748ca5;
+ } */
