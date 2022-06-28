@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/calendar-style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/calendar-style.css">
   <title>マイページ</title>
 </head>
 
@@ -14,9 +14,12 @@
   <div class="main-parent">
     <div class="main">
   
+    <div class="inline-block_test">
       <a href="cumulative" class="back-btn">累計</a>
       <a href="category" class="back-btn">支出の分類振り分け</a>
-  
+    </div>
+
+    <div class="inline-block_test">
       <!-- <h1>収支差額グラフ</h1> -->
       <div class="chart-container" style="position: relative; height:50vh; width:50vw">
         <canvas id="myBarChart"></canvas>
@@ -75,17 +78,17 @@
                     {
                       label:'収入',
                       data: [income, 0, 0],//収入と差額をそれぞれ表示させる為の配列
-                      backgroundColor: ["rgba(219,39,91,0.5)","rgba(219,39,250,0.5)", "rgba(219,39,91,2.0)"]
+                      backgroundColor: ["rgba(200,10,10,0.4)","rgba(219,39,250,0.4)", "rgba(219,39,91,2.0)"]
                     },
                     {
                       label:'固定費',
                       data: [0, fixedcost, 0],//固定費を表示させる為の配列
-                      backgroundColor: ["rgba(219,39,91,0.5)","rgba(219,39,250,0.5)", "rgba(219,39,91,2.0)"]
+                      backgroundColor: ["rgba(219,39,91,0.5)","rgba(219,39,250,0.4)", "rgba(219,39,91,2.0)"]
                     },
                     {
                       label:'変動費',
                       data: [0, variablecost, 0],//変動費を表示させる為の配列
-                      backgroundColor: ["rgba(219,39,91,0.5)","rgba(219,39,100,0.5)", "rgba(219,39,91,2.0)"]
+                      backgroundColor: ["rgba(219,39,91,0.5)","rgba(219,39,100,0.4)", "rgba(219,39,91,2.0)"]
                     },
                     {
                       label:'支出合計額',
@@ -95,7 +98,7 @@
                     {
                       label:'差額(残高)',
                       data: [0, 0, difference],//差額を表示させる為の配列
-                      backgroundColor: ["rgba(219,39,91,0.5)","pink", "rgba(50,200,200,0.5)"]
+                      backgroundColor: ["rgba(219,39,91,0.5)","pink", "rgba(219,50,50,0.4)"]
                     }
                     
                   ]
@@ -134,6 +137,7 @@
           });
         </script>
       </div>
+    </div>
 
       <center>
         <h3><a href="?ym={{$prev}}">&lt;</a>{{$html_title}}<a href="?ym={{$next}}">&gt;</a></h3>
@@ -141,13 +145,13 @@
     <table class="calendar" border=1>
       <form action="input" method="get" name="list">
         <tr>
-            <th calss="weekend">日</th>
-            <th calss="weekday">月</th>
-            <th calss="weekday">火</th>
-            <th calss="weekday">水</th>
-            <th calss="weekday">木</th>
-            <th calss="weekday">金</th>
-            <th calss="saturday">土</th>
+            <th class="weekend">日</th>
+            <th class="weekday">月</th>
+            <th class="weekday">火</th>
+            <th class="weekday">水</th>
+            <th class="weekday">木</th>
+            <th class="weekday">金</th>
+            <th class="saturday">土</th>
         </tr>
         
         @foreach ($weeks as $week)

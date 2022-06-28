@@ -44,7 +44,7 @@ $message = $_SESSION['passError'];
                     <input type="password" name="newPass2" size=50 placeholder="xxxx">
                     </h4>
                     <div><br>
-                        <button type="submit">登録</button>
+                        <button type="button" class="register-btn" onclick="openModal()">登録</button>
                         <x-modal mode="登録" />
                     </div>
                 </form>

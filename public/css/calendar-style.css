@@ -28,15 +28,15 @@ table.calendar th.title {
 }
 
 table.calendar th.weekend {
-  background-color: #ffb6c1;
+  background-color: #ffd2e1;
 }
 
 table.calendar th.weekday {
-  background-color: #98fb98;
+  background-color: #c9f7ca;
 }
 
-table.calendar th.Saturday {
-  background-color: #77ffff;
+table.calendar th.saturday {
+  background-color: #aaf0f0;
 }
 
 table.calendar h3 {
@@ -47,7 +47,7 @@ table.calendar h3 {
 }
 
 table.calendar td.weekend {
-  background-color: #fff0f5;
+  background-color: #ffd2e1;
 }
 
 table.calendar td.weekday {
@@ -59,7 +59,7 @@ table.calendar td.Saturday {
 }
 
 table.calendar td.today {
-  background-color: #87cefa
+  background-color: #c0fadd
 }
 
 table.calendar li {

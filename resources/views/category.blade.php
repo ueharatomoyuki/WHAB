@@ -76,7 +76,7 @@
                     cell2.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=1 checked>';
                     cell3.innerHTML = '<input type="radio" name="category_select[' + cou + ']" value=2>';
                     // cell4.innerHTML = '<input type="checkbox" name="delete">';
-                    cell4.innerHTML = '<input type="button" value=この行を削除 id="coladd" onclick="coldel(this)">';
+                    cell4.innerHTML = '<input type="button" class="delete-btn" value=この行を削除 id="coladd" onclick="coldel(this)">';
                 }
                 function coldel(obj) {
                     // 削除ボタンを押下された行を取得
@@ -92,13 +92,13 @@
 
             <!-- <button type="submit" class="btn">削除</button>
             </form> -->
-
-        <button type="submit" class="btn">登録</button>
+        <br>
+        <button type="submit" class="register-btn">登録</button>
         <!-- <button type="submit" class="btn">削除</button> -->
 
-    </form> 
+    </form><br> 
 
-    <input type="button" value="行を追加" id="coladd" onclick="coladd()"> 
+    <input type="button" class="register-btn" value="行を追加" id="coladd" onclick="coladd()"> 
 
  
         

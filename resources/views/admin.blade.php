@@ -39,8 +39,8 @@
       
       <div>
       <h3>ユーザー管理</h3>
-            <a href="userlist" class="back-btn">ユーザー一覧</a>
-            <a href="information" class="back-btn">お知らせ</a>
+            <a href="userlist" class="admin-btn">ユーザー一覧</a>
+            <a href="information" class="admin-btn">お知らせ</a>
       </div>
 
     </div>

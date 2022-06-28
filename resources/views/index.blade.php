@@ -9,7 +9,7 @@ $_SESSION['userLog'] = 1;
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <title>ログイン</title>
 </head>
 
@@ -43,10 +43,10 @@ $_SESSION['userLog'] = 1;
         <span class="error">{{$message}}</span>
         @enderror
       </div>
-      <button type="submit" class="btn">ログイン</button>
+      <button type="submit" class="register-btn">ログイン</button>
     </form>
     <br>
-    <a href="insert" class="btn">新規登録</a>
+    <a href="insert" class="register-btn">新規登録</a>
   </div>
 </div>
 

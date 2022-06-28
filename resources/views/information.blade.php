@@ -25,8 +25,8 @@
 
       <div>
           <center><br>
-            <button type="submit" onclick="openModal()">登録</button>
-            <x-modal mode="登録" />
+            <button type="submit" class="register-btn" onclick="openModal()">送信</button>
+            <x-modal mode="送信" />
           </center>
       </div>
 

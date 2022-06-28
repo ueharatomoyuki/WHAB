@@ -31,7 +31,7 @@
 <th>
   <form action="changeUserName" method="get">
         @csrf
-  <button type="submit" class="btn">変更</button> </form></th>
+  <button type="submit" class="register-btn">変更</button> </form></th>
 </tr>
 <tr>
 <th>パスワード</th>
@@ -40,7 +40,7 @@
   <th>
   <form action="changePassword" method="get">
           @csrf
-  <button type="submit" class="btn">変更</button> </form></th>
+  <button type="submit" class="register-btn">変更</button> </form></th>
 </tr>
 <tr>
 <th>メールアドレス</th>
@@ -49,7 +49,7 @@
 <th>
   <form action="changeMail" method="get" >
         @csrf
-  <button type="submit" class="btn">変更</button> </form></th>
+  <button type="submit" class="register-btn">変更</button> </form></th>
 </tr>
 
 </table>
