@@ -15,7 +15,7 @@ class InformationController extends Controller
             Log::debug('messege', [$messege]);
         $date = new datetime();
             Log::debug('date', [$date]);
-        $today = $date->format('Y-m-d');
+        $today = $date->format('Y-m-d H:i:s');
             Log::debug('today', [$today]);
         $newMessege = DB::table('information')->insert(['messege'=>"$messege", 'date'=>"$today"]);
         return view('information');
