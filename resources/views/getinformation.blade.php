@@ -6,6 +6,22 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/schedule-style.css">
   <title>お知らせ閲覧ページ</title>
+  <style>
+    table {
+     width:500px;
+     text-align: left;
+     border-collapse: collapse;
+    }
+    th {
+     padding: 10px;
+     border-bottom: solid 5px #37beb0;
+    }
+
+    td {
+     padding: 10px;
+     border-bottom: solid 1px #37beb0;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,10 +31,9 @@
   <div class="main">
    
   <p><a href="/calendar" class="back-btn">マイページへ戻る</a></p>
-    
-    <div class="input-form">
-        <h2>お知らせ</h2>
+<br>
 
+        <h2>お知らせ</h2>
 
 
                 <div>
@@ -41,7 +56,7 @@
       </div>
 
        
-     </div>
+
     
 </div>
 </div>

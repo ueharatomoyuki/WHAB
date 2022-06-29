@@ -6,7 +6,9 @@ $user= session('userInf');
 
 ?>
 <header>
+
     <h1>{{ $heading }}</h1>
+
     <h3><br>
       ようこそ、{{ $user[0]->name }}さん
     </h3>
@@ -22,4 +24,4 @@ $user= session('userInf');
 
     <a href="/logout" class="bt bt-border-shadow bt-border-shadow--color">ログアウト</a>
 
-</header>
+  </header>

@@ -6,6 +6,22 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/schedule-style.css">
   <title>管理者お知らせ発信ページ</title>
+  <style>
+    table {
+     width:500px;
+     text-align: left;
+     border-collapse: collapse;
+    }
+    th {
+     padding: 10px;
+     border-bottom: solid 5px #37beb0;
+    }
+
+    td {
+     padding: 10px;
+     border-bottom: solid 1px #37beb0;
+    }
+  </style>
 </head>
 
 <body>
